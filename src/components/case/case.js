@@ -30,7 +30,6 @@ const Case = props => {
 
 Case.propTypes = {
     src: PropsTypes.string.isRequired,
-    alt: PropsTypes.string.isRequired,
     category: PropsTypes.string.isRequired,
     thumbDesc: PropsTypes.string,
     index: PropsTypes.number.isRequired,

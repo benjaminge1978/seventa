@@ -11,9 +11,7 @@ export default () => {
             <div className="site-header-brand">
                 <SiteBrand />
             </div>
-            <div className="header-menu-wrapper">
-                <HeaderMenu />
-            </div>
+            <HeaderMenu />
         </header>
     )
 }

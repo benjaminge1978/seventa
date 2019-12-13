@@ -1,9 +1,11 @@
 ul#header-menu {
     list-style-type: none;
     font-size: .8rem;
+    margin: 0;
 
     li {
         display: inline-block;
+        margin-bottom: 0;
 
         a {
             display: block;
@@ -11,4 +13,56 @@ ul#header-menu {
             color: #000;
         }
     }
+}
+
+button.header-menu-toogle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+        width: 1.5rem!important;
+        height: auto;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@media all and (max-width: 1420px) {
+    .header-menu-wrapper {
+        display: none;
+
+        &.active {
+            display: block;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            background-color: #313131;
+            z-index: 2;
+
+            ul#header-menu {
+                padding-top: 15px;
+                padding-bottom: 15px;
+
+                li {
+                    display: block;
+
+                    a {
+                        color: #fff;
+                        font-size: 1.5rem;
+                        padding: 20px 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    button.header-menu-toogle {
+        display: inline-block;
+    }
+
 }
