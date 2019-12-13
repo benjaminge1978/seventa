@@ -2,7 +2,6 @@ import React from 'react'
 
 import { useStaticQuery, graphql } from 'gatsby'
 
-//import ServiceItem from './service-item/service-item'
 import Arrow from '../../../../src/images/arrow-right.svg'
 
 import './services.scss'
@@ -17,29 +16,6 @@ export default () => {
             }
         }
     `)
-
-    // const services = [
-    //     {
-    //         title: 'Brand activation',
-    //         description: 'At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.',
-    //     },
-    //     {
-    //         title: 'Conferences',
-    //         description: 'At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.',
-    //     },
-    //     {
-    //         title: 'Event production',
-    //         description: 'At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.',
-    //     },
-    //     {
-    //         title: 'Event management',
-    //         description: 'At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.',
-    //     },
-    //     {
-    //         title: 'Venue sourcing',
-    //         description: 'At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.',
-    //     },
-    // ]
 
     return (
         <div className="services-section">
@@ -59,19 +35,6 @@ export default () => {
                 </p>
             </div>
             <div className="services-cards">
-                {/* {
-                    services.map((item, index) => (
-                        images.allFile.nodes[1]
-                        ? <ServiceItem 
-                                imgSrc={images.allFile.nodes[index].childImageSharp.fluid.src}
-                                imgSrcSet={images.allFile.nodes[index].childImageSharp.fluid.srcSet}
-                                title={services.title}
-                                description={services.description}
-                                key={index}
-                            />
-                        : null
-                    ))
-                } */}
                 <div className="services-cards__item">
                     <img src={images.allFile.nodes[0].publicURL} alt="Brand activation" />
                     <h3>Brand activation</h3>

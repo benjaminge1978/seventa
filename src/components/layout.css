@@ -14,7 +14,6 @@ body {
   font-family: "europa",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   margin: 0;
-  color: #313131;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -614,12 +613,6 @@ pre tt:after {
   content: "";
 }
 
-.page-content {
-  width: 95%;
-  max-width: 1775px;
-  margin: 0 auto;
-}
-
 a {
   text-decoration: none;
 }
@@ -631,12 +624,6 @@ a {
 
 .row {
   display: flex;
-}
-
-@media only screen and (max-width: 768px) {
-  .page-content {
-    width: 100%;
-  }
 }
 
 @media only screen and (max-width: 480px) {

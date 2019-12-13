@@ -1,0 +1,46 @@
+$greyColor: #9a9a9a;
+$darkColor: #313131;
+
+$greyBg: #717171;
+$darkBg: #313131;
+
+.light-text {
+  color: $greyColor;
+}
+
+body {
+  color: $darkColor;
+}
+
+.policy {
+
+  &-container {
+    max-width: 1000px;
+    margin: 130px auto;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  &-header {
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-bottom: 1.5em;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+      @extend .light-text;
+    }
+  }
+
+  &-content {
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8rem;
+    }
+  }
+}

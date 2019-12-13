@@ -12,9 +12,9 @@ export default () => (
         <div className="footer-summary">
             <div className="footer-menu-wrapper">
             <Menu id="footer-menu" links={[
-                {href: 'cookie-policy', text: 'Privacy Policy & T&C\'s'},
+                {href: 'policy', text: 'Privacy Policy & T&C\'s'},
                 {href: 'csr', text: 'CSR'},
-                {href: 'privacy-policy', text: 'Cookie Policy'},
+                {href: 'cookie-policy', text: 'Cookie Policy'},
                 {href: 'https://google.com', text: 'Site by MilkIsNice', external: true},
             ]}/>
             </div>

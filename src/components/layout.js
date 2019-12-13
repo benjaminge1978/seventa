@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import Header from './header/header'
 import Footer from "./footer/footer"
 
+import './_main.scss'
 import "./layout.css"
 
 const Layout = ({ children }) => {

@@ -79,3 +79,21 @@
         }
     }
 }
+
+@media all and (max-width: 480px) {
+    .banner-section {
+
+        &__left {
+            width: 75px;
+            min-width: 75px;
+
+        }
+
+        &__inner {
+
+            .banner-text {
+                font-size: 40px;
+            }
+        }
+    }
+}
