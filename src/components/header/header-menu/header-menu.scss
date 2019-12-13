@@ -1,0 +1,14 @@
+ul#header-menu {
+    list-style-type: none;
+    font-size: .8rem;
+
+    li {
+        display: inline-block;
+
+        a {
+            display: block;
+            padding: 0 25px;
+            color: #000;
+        }
+    }
+}
