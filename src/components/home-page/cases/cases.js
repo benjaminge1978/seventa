@@ -36,8 +36,8 @@ export default () => {
                 <div className="cases-list">
                     {
                         casesData.allContentfulCaseCategory.nodes.map((category, index) => {
-                            if ( ! category.cases.length ) {
-                                return ''
+                            if ( ! category.cases ) {
+                                return null;
                             }
 
                             const firstCase = category.cases[0]

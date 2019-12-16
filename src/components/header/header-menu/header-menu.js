@@ -27,7 +27,7 @@ class HeaderMenu extends React.Component {
                     <Menu id="header-menu" links={[
                         {href: 'event-production', text: 'Event Production'},
                         {href: 'conferences', text: 'Conferences'},
-                        {href: 'brand-ativation', text: 'Brand Activation'},
+                        {href: 'brand-activation', text: 'Brand Activation'},
                         {href: 'event-management', text: 'Event Management'},
                         {href: 'venue-sourcing', text: 'Venue Sourcing'},
                         {href: 'portfoilo', text: 'Portfoilo'},

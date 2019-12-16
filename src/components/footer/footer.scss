@@ -23,7 +23,6 @@ footer.site-footer {
         background-color: #313131;
         color: #9a9a9a;
         padding: 275px 75px 100px 175px;
-        //transform: translateY(-200px);
         margin-top: -200px;
 
         a {
@@ -75,7 +74,7 @@ footer.site-footer {
 
         .footer-summary {
             padding: 35px 50px;
-            transform: rotateY(0);
+            margin-top: 0;
 
             .site-by-link {
                 display: block;
