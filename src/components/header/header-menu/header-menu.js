@@ -30,7 +30,7 @@ class HeaderMenu extends React.Component {
                         {href: 'brand-activation', text: 'Brand Activation'},
                         {href: 'event-management', text: 'Event Management'},
                         {href: 'venue-sourcing', text: 'Venue Sourcing'},
-                        {href: 'portfoilo', text: 'Portfoilo'},
+                        {href: 'portfolio', text: 'Portfoilo'},
                         {href: 'about', text: 'About'},
                         {href: 'blog', text: 'Blog'},
                         {href: 'contact', text: 'Contact'},

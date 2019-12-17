@@ -1,53 +1,48 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 
-import Layout from "../layout"
-import SEO from "../seo"
-import SeeMore from "./see-more/see-more"
-import Arrow from "../../images/arrow-left.svg"
+import Layout from "../layout";
+import SEO from "../seo";
+import SeeMore from "./see-more/see-more";
+import PageHeading from "../page-heading/page-heading";
+import ContainerLabelled from "../container-labelled/container-labelled";
+import Arrow from "../../images/arrow-left.svg";
 
-import "./case-page.scss"
+import "./case-page.scss";
 
 const CasePage = ({data}) => {
     const caseItem = data.contentfulCases,
         category = caseItem.caseCategories ? caseItem.caseCategories[0] : null,
-        seeMoreNodes = data.allContentfulCases.nodes,
-        services = caseItem.services.services;
-
-    console.log(caseItem.thumbnail);
+        seeMoreNodes = data.allContentfulCases.nodes;
 
     return (
         <Layout>
             <SEO title={caseItem.title} />
             <div className="case-item">
-                <div className="case-item__heading">
-                    <p className="category-name">{category.name}</p>
-                    <h1>{caseItem.title}</h1>
-                    <div className="services-list">
-                        <p className="service-title">Service</p>
-                        {
-                            services
-                                ? <ul>{services.split('\n').map((service, index) => service ? <li key={index}>{service}</li> : null)}</ul>
-                                : null
-                        }
-                    </div>
-                </div>
-                <div className="section-labelled case-item__thumbnail">
-                    <div className="section-labelled">
-                        <div className="section-labelled__label">
-                            <Arrow />
-                        </div>
-                        <div className="section-labelled__inner">
-                            <img src={caseItem.thumbnail.fixed.src} alt={caseItem.title} />
-                        </div>
-                    </div>
-                </div>
+                <PageHeading
+                    pageName={category.name}
+                    pageTitle={caseItem.title}
+                >
+                    {
+                        caseItem.services
+                        ?   <div className="services-list">
+                                <p className="service-title">Service</p>
+                                <ul>{caseItem.services.services.split('\n').map((service, index) => service ? <li key={index}>{service}</li> : null)}</ul>
+                            </div>
+                        : null
+                    }
+                </PageHeading>
+                <ContainerLabelled label={<Arrow />} className="case-item__thumbnail" >
+                    <img src={caseItem.thumbnail.fixed.src} alt={caseItem.title} />
+                </ContainerLabelled>
                 {
                     seeMoreNodes
-                    ? <SeeMore
-                            cases={seeMoreNodes}
-                            catName={category.name}
-                        />
+                    ?   <ContainerLabelled className="section--see-more">
+                            <SeeMore
+                                cases={seeMoreNodes}
+                                catName={category.name}
+                            />
+                        </ContainerLabelled>
                     : null
                 }
             </div>
@@ -101,4 +96,4 @@ export const query = graphql`
     }
 `;
 
-export default CasePage
+export default CasePage;

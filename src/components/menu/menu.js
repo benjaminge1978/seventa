@@ -4,7 +4,7 @@ import PropsTypes from 'prop-types'
 import LinkItem from './menu-link/menu-link'
 
 const Menu = props => {
-    const links = props.links
+    const links = props.links;
 
     return (
         links.length
@@ -23,13 +23,13 @@ const Menu = props => {
          </ul>
         : null
     )
-}
+};
 
 Menu.defaultProps = {
     links: [],
     id: '',
     linkClass: 'menu-link'
-}
+};
 
 Menu.propTypes = {
     props: PropsTypes.shape({
@@ -37,6 +37,6 @@ Menu.propTypes = {
         id: PropsTypes.string,
         linkClass: PropsTypes.string,
     })
-}
+};
 
 export default Menu

@@ -2,35 +2,21 @@
     display: flex;
     margin: 110px 0;
 
-    &__left {
-        width: 175px;
-        min-width: 175px;
-
-        .section-label {
-            display: block;
-            transform: rotate(90deg) translate(73px, -5px);
-        }
+    .section-label {
+        display: block;
+        transform: rotate(90deg) translate(73px, -5px);
     }
 
-    &__inner {
-        flex-grow: 1;
-
-        .cases-list {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            //grid-template-rows: repeat(16, 1fr);
-        }
+    .cases-list {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
     }
 }
 
 @media all and (max-width: 992px) {
     .cases-section {
 
-        &__left {
-            display: none;
-        }
-
-        &__inner {
+        .container-labelled__inner {
             padding: 50px;
 
             .cases-list {

@@ -1,22 +1,13 @@
-.cuctomers-section {
+.customers-section {
     display: flex;
     flex-wrap: nowrap;
 
-    &__left {
-        position: relative;
-        width: 175px;
-        min-width: 175px;
-
-        .section-label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            transform: rotate(90deg) translate(40%, -130%);
-        }
+    .section-label {
+        display: block;
+        transform: rotate(90deg) translate(44%, -10%);
     }
 
-    &__inner {
+    .container-labelled__inner {
         flex-grow: 2;
         padding: 90px;
         background-color: #efefef;
@@ -52,22 +43,7 @@
 }
 
 @media only screen and (max-width: 992px) {
-    .cuctomers-section {
+    .customers-section {
         display: none;
-
-        /*&__left {
-            display: none;
-        }
-
-        &__inner {
-            padding: 65px;
-
-            .customers-row {
-
-                .customer-item {
-                    width: 25%;
-                }
-            }
-        }*/
     }
 }

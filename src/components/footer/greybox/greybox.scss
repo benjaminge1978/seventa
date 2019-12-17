@@ -5,7 +5,7 @@
     z-index: 2;
     color: #fff;
 
-    .footer-greybox__left {
+    .container-labelled__label {
         flex-basis: 175px;
         position: relative;
 
@@ -32,7 +32,7 @@
         }
     }
 
-    .footer-greybox__inner {
+    .container-labelled__inner {
         flex-grow: 2;
         background-color: #717171;
         padding: 75px 100px;
@@ -88,11 +88,11 @@
 @media only screen and (max-width: 992px) {
     .footer-greybox {
 
-        .footer-greybox__left {
+        .container-labelled__label {
             display: none;
         }
 
-        .footer-greybox__inner {
+        .container-labelled__inner {
 
             .brand-mobile {
                 display: block;
@@ -104,7 +104,7 @@
 @media only screen and (max-width: 768px) {
     .footer-greybox {
 
-        .footer-greybox__inner {
+        .container-labelled__inner {
             padding: 65px 50px;
         }
     }

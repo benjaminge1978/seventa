@@ -28,34 +28,27 @@ export default () => {
     `);
 
     return (
-        <div className="cases-section">
-            <div className="cases-section__left">
-                <span className="section-label">Cases ——</span>
-            </div>
-            <div className="cases-section__inner">
-                <div className="cases-list">
-                    {
-                        casesData.allContentfulCaseCategory.nodes.map((category, index) => {
-                            if ( ! category.cases || ! category.cases.length ) {
-                                return null;
-                            }
-
-                            const firstCase = category.cases.shift();
-
-                            return (
-                                <Case
-                                    key={index}
-                                    index={index}
-                                    category={category.name}
-                                    src={firstCase.thumbnail.fixed.src}
-                                    title={firstCase.title}
-                                    thumbDesc={firstCase.thumb_excerpt}
-                                />
-                            )
-                        })
+        <div className="cases-list">
+            {
+                casesData.allContentfulCaseCategory.nodes.map((category, index) => {
+                    if ( ! category.cases || ! category.cases.length ) {
+                        return null;
                     }
-                </div>
-            </div>
+
+                    const firstCase = category.cases.shift();
+
+                    return (
+                        <Case
+                            key={index}
+                            index={index}
+                            category={category.name}
+                            src={firstCase.thumbnail.fixed.src}
+                            title={firstCase.title}
+                            thumbDesc={firstCase.thumb_excerpt}
+                        />
+                        )
+                })
+            }
         </div>
     )
 }
