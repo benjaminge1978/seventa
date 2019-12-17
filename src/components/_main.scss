@@ -44,3 +44,38 @@ body {
     }
   }
 }
+
+.section {
+
+  &-labelled {
+    width: 100%;
+    display: flex;
+
+    &__label {
+      width: 175px;
+      flex-basis: 175px;
+      min-width: 175px;
+    }
+
+    &__inner {
+      width: calc(100% - 175px);
+    }
+  }
+}
+
+@media all and (max-width: 992px) {
+  .section {
+
+    &-labelled {
+      display: flex;
+
+      &__label {
+        display: none;
+      }
+
+      &__inner {
+        width: 100%;
+      }
+    }
+  }
+}

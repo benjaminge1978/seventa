@@ -11,15 +11,18 @@
     img {
       display: block;
       width: 100%;
+      margin-bottom: 0;
     }
 
     .case-category-item-desc {
       display: flex;
       align-items: flex-end;
+      margin: 25px 0 50px 0;
 
       svg {
         display: block;
         width: 40px;
+        min-width: 40px;
       }
 
       .case-category-item-heading {

@@ -13,6 +13,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         nodes {
           id
           slug
+          caseCategories {
+            id
+          }
         }
       }
     }
@@ -37,7 +40,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           path: node.slug,
           component: path.resolve(`./src/components/case-page/case-page.js`),
           context: {
-              id: node.id
+              id: node.id,
+              categoryID: node.caseCategories[0].id,
           },
       });
   });

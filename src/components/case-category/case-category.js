@@ -12,6 +12,7 @@ import './case-category.scss'
 export default ({data}) => {
     const category = data.contentfulCaseCategory;
     const testimonial = category.testimonials ? category.testimonials[0] : null;
+    console.log(testimonial);
 
     return (
         <Layout>
@@ -60,8 +61,8 @@ export default ({data}) => {
 }
 
 export const query = graphql`
-    query CaseQuery($id: String) {
-        contentfulCaseCategory(id: {eq: $id}) {
+    query CaseCategoryQuery($id: String) {
+        contentfulCaseCategory(id: {eq: $id}, testimonials: {elemMatch: {bindToCategory: {id: {eq: $id}}}}) {
             cases {
                 id
                 title

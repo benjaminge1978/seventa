@@ -1,0 +1,80 @@
+.case-item {
+
+  &__heading {
+    margin: 0 375px;
+
+    p {
+
+      &.category-name, &.service-title {
+        color: #9a9a9a;
+      }
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 400;
+    }
+
+    .services-list {
+      margin: 75px 0;
+
+      ul {
+        list-style-type: none;
+        list-style-position: inside;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  &__thumbnail {
+
+    svg {
+      display: block;
+      width: 40%;
+      margin-top: 150px;
+      margin-left: 30%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .case-item {
+
+    &__heading {
+      margin-right: 200px;
+      margin-left: 200px;
+    }
+  }
+}
+
+@media all and (max-width: 992px) {
+  .case-item {
+
+    &__heading {
+      margin-right: 150px;
+      margin-left: 150px;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+@media all and (max-width: 768px) {
+  .case-item {
+
+    &__heading {
+      margin-right: 50px;
+      margin-left: 50px;
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

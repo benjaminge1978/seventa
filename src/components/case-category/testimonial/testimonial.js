@@ -1,8 +1,9 @@
 import React from "react"
+import PropsTypes from "prop-types"
 
 import './testimonial.scss'
 
-export default () => (
+const Testimonial = ({author, text}) => (
     <div className="testimonial">
         <div className="testimonial__left">
             <span className="testimonial-label">Testimonial ——</span>
@@ -10,9 +11,16 @@ export default () => (
         <div className="testimonial__inner">
             <p className="testimonial__heading">What do our clients say</p>
             <div className="testimonial__content">
-                <p className="testimonial__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, commodi cumque dicta dolores excepturi illum, inventore iure laudantium molestias necessitatibus odit officia pariatur rerum tenetur!</p>
-                <p className="testimonial__author">Lorem ipsum dolor.</p>
+                <div className="testimonial__text" dangerouslySetInnerHTML={{__html: text}}/>
+                <p className="testimonial__author">{author}</p>
             </div>
         </div>
     </div>
-)
+);
+
+Testimonial.propsTypes = {
+    author: PropsTypes.string.isRequired,
+    text: PropsTypes.string.isRequired,
+};
+
+export default Testimonial;

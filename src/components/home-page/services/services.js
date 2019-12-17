@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import Arrow from '../../../../src/images/arrow-right.svg'
 
@@ -37,31 +36,31 @@ export default () => {
             <div className="services-cards">
                 <div className="services-cards__item">
                     <img src={images.allFile.nodes[0].publicURL} alt="Brand activation" />
-                    <h3>Brand activation</h3>
+                    <h3><Link to="/brand-activation">Brand activation</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
                     <Arrow />
                 </div>
                 <div className="services-cards__item">
                     <img src={images.allFile.nodes[1].publicURL} alt="Conferences" />
-                    <h3>Conferences</h3>
+                    <h3><Link to="/conferences">Conferences</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
                     <Arrow />
                 </div>
                 <div className="services-cards__item">
                     <img src={images.allFile.nodes[2].publicURL} alt="Event production" />
-                    <h3>Event production</h3>
+                    <h3><Link to="/event-production">Event production</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
                     <Arrow />
                 </div>
                 <div className="services-cards__item">
                     <img src={images.allFile.nodes[3].publicURL} alt="Event management" />
-                    <h3>Event management</h3>
+                    <h3><Link to="/event-management">Event management</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
                     <Arrow />
                 </div>
                 <div className="services-cards__item">
                     <img src={images.allFile.nodes[4].publicURL} alt="Venue sourcing" />
-                    <h3>Venue sourcing</h3>
+                    <h3><Link to="/venue-sourcing">Venue sourcing</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
                     <Arrow />
                 </div>
