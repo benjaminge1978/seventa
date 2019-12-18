@@ -18,7 +18,7 @@ export default () => (
         }>
             <Greybox />
         </ContainerLabelled>
-        <ContainerLabelled className="footer-summary">
+        <div className="footer-summary">
             <div className="footer-menu-wrapper">
                 <Menu id="footer-menu" links={[
                     {href: 'policy', text: 'Privacy Policy & T&C\'s'},
@@ -31,6 +31,6 @@ export default () => (
                 <span className="social-links__text">Follow us ——</span>
                 <SocialMenu />
             </div>
-        </ContainerLabelled>
+        </div>
     </footer>
 )

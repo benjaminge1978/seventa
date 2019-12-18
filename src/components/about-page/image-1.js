@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 export default () => {
     const imageQuery = useStaticQuery(graphql`
         query Image1 {
-            file(relativePath: {eq: "about-page-promo.jpg"}) {
+            file(relativePath: {eq: "seventa-about-painting.jpg"}) {
                 childImageSharp {
                     fixed(width: 800, height: 800) {
                         src
