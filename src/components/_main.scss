@@ -3,9 +3,22 @@ $darkColor: #313131;
 
 $greyBg: #717171;
 $darkBg: #313131;
+$lightenBg: #efefef;
 
 .light-text {
   color: $greyColor;
+}
+
+.dark-text {
+  color: $darkBg;
+}
+
+.light-bg {
+  background-color: $lightenBg;
+}
+
+.dark-bg {
+  background-color: $darkColor;
 }
 
 body {
