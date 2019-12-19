@@ -1,8 +1,17 @@
 const path = require("path");
+
+exports.onCreatePage = (bla) => {
+    // const { createPage, deletePage } = actions;
+
+    if ( '/' === bla.page.path ) {
+
+    }
+};
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const pagesSlugs = await graphql(`
-    query {
+    query CreatePagesQuery {
       allContentfulCaseCategory {
         nodes {
           slug

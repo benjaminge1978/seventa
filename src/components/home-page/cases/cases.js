@@ -1,54 +1,35 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react";
+import Case from "../../case/case";
 
-import Case from '../../case/case'
+import "./cases.scss";
 
-import './cases.scss'
-
-export default () => {
-    const casesData = useStaticQuery(graphql`
-        {
-          allContentfulCaseCategory(sort: {fields: name}) {
-            nodes {
-              name
-              id
-              cases {
-                title
-                id
-                thumb_excerpt
-                thumbnail {
-                  fixed {
-                    src
-                  }
-                }
-              }
-            }
-          }
-        }
-    `);
+export default props => {
+    let index = 0;
 
     return (
         <div className="cases-list">
             {
-                casesData.allContentfulCaseCategory.nodes.map((category, index) => {
-                    if ( ! category.cases || ! category.cases.length ) {
-                        return null;
+                props.data.allContentfulCaseCategory.edges.map(item => {
+                    const node = item.node;
+
+                    if ( node.cases && node.cases.length ) {
+                        const firstCase = node.cases[0];
+
+                        return (
+                            <Case
+                                key={index++}
+                                index={index}
+                                category={node.name}
+                                src={firstCase.thumbnail.fixed.src}
+                                title={firstCase.title}
+                                thumbDesc={firstCase.thumb_excerpt}
+                            />
+                        );
                     }
 
-                    const firstCase = category.cases.shift();
-
-                    return (
-                        <Case
-                            key={index}
-                            index={index}
-                            category={category.name}
-                            src={firstCase.thumbnail.fixed.src}
-                            title={firstCase.title}
-                            thumbDesc={firstCase.thumb_excerpt}
-                        />
-                        )
+                    return null;
                 })
             }
         </div>
-    )
+    );
 }
