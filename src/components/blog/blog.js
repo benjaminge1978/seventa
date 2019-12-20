@@ -32,7 +32,7 @@ export default ({data, pageContext}) => {
                                         key={index}
                                         title={post.title}
                                         slug={post.slug}
-                                        thumbSrc={post.thumbnail.fixed.src}
+                                        thumb={post.thumbnail.fixed}
                                         excerpt={post.excerpt}
                                         date={post.createdAt}
                                     />
@@ -64,6 +64,7 @@ export const query = graphql`
                     fixed(width: 740, height: 580) {
                         src
                     }
+                    title
                 }
                 excerpt
             }

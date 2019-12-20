@@ -5,11 +5,11 @@ import Arrow from "../../../images/arrow-right.svg";
 
 import "./blog-post-preview.scss";
 
-const BlogPostPreview = ({title, excerpt, thumbSrc, date, slug}) => {
+const BlogPostPreview = ({title, excerpt, thumb, date, slug}) => {
     return (
         <Link to={`/blog/${slug}`} className="blog-post-preview">
             <figure className="blog-post-preview__thumb">
-                <img src={thumbSrc} alt={title} />
+                <img src={thumb.src} alt={thumb.title} />
             </figure>
             <p className="blog-post-preview__date">{date}</p>
             <h2 className="blog-post-preview__title">{title}</h2>
@@ -22,7 +22,7 @@ const BlogPostPreview = ({title, excerpt, thumbSrc, date, slug}) => {
 BlogPostPreview.propTypes = {
     title: PropsTypes.string.isRequired,
     excerpt: PropsTypes.string.isRequired,
-    thumbSrc: PropsTypes.string.isRequired,
+    thumb: PropsTypes.object.isRequired,
     date: PropsTypes.string.isRequired,
     slug: PropsTypes.string.isRequired,
 };

@@ -9,7 +9,7 @@ const PageHeading = props => {
     return (
         <div className={className}>
             <div className="page-heading__inner">
-                <p className="page-heading__name">{props.pageName}</p>
+                <h3 className="page-heading__name">{props.pageName}</h3>
                 <h1 className="page-heading__title">{props.pageTitle}</h1>
                 {
                     props.description

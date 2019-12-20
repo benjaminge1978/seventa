@@ -33,6 +33,7 @@ export default ({data}) => {
                                         key={index}
                                         slug={caseItem.slug}
                                         imgSrc={caseItem.thumbnail.fixed.src}
+                                        imgTitle={caseItem.thumbnail.fixed.title}
                                         caseTitle={caseItem.title}
                                         categories={caseItem.caseCategories}
                                     />)
@@ -67,6 +68,7 @@ export const query = graphql`
                     fixed(width: 600, height: 600) {
                         src
                     }
+                    title
                 }
                 caseCategories {
                     slug

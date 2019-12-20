@@ -81,7 +81,7 @@ export default () => {
                                             <TeamMember
                                                 name={member.name}
                                                 position={member.position}
-                                                photo={member.photo.fixed.src}
+                                                photo={member.photo.fixed}
                                             />
                                         </div>
                                     ))

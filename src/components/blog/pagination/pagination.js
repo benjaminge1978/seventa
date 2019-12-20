@@ -1,6 +1,8 @@
 import React from "react";
 import PropsTypes from "prop-types";
 import { Link } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import "./pagination.scss";
 
@@ -9,23 +11,59 @@ const Pagination = ({maxPages, current}) => {
         return null;
     }
 
+    let pageNumbers = [];
+
+    //Need refactoring
+    if ( maxPages >= 9 ) {
+        if ( current < 4 ) {
+            pageNumbers = [1, 2, 3, '...', maxPages];
+        } else if ( current > (maxPages - 3) ) {
+            pageNumbers = [1, '...', maxPages - 2, maxPages - 1, maxPages];
+        } else {
+            pageNumbers = [1, '...', current - 1, current, current + 1, '...', maxPages];;
+        }
+    } else {
+        pageNumbers = [...Array(maxPages).keys()].map(index => index + 1);
+    }
+
     return (
         <div className="pagination">
+
+            {
+                current === 1
+                    ? null
+                    :   <Link className="pagination__arrow" to={current > 2 ? `/blog/${current - 1}` : `blog`}>
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </Link>
+            }
+
             <ul className="pagination__list">
                 {
-                    [...Array(maxPages).keys()].map(index => (
-                        <li>
-                            <Link
-                                key={index}
-                                to={0 === index ? `/blog` : `/blog/${index + 1}`}
-                                className={'pagination__link' + (index + 1 === current ? ' pagination__link--current' : '')}
-                            >
-                                {index + 1}
-                            </Link>
+                    pageNumbers.map((linkText, index) => (
+                        <li key={index}>
+                            {
+                                'number' === typeof linkText
+                                ?   <Link
+                                        to={1 === linkText ? `/blog` : `/blog/${linkText}`}
+                                        className={'pagination__link' + (linkText === current ? ' pagination__link--current' : '')}
+                                    >
+                                        {linkText}
+                                    </Link>
+                                :    <span>{linkText}</span>
+                            }
                         </li>
                     ))
                 }
             </ul>
+
+            {
+                current === maxPages
+                    ? null
+                    :   <Link className="pagination__arrow" to={`/blog/${current + 1}`}>
+                            <FontAwesomeIcon icon={faChevronRight} />
+                        </Link>
+            }
+
         </div>
     );
 };

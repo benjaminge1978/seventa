@@ -82,6 +82,10 @@
   &-images {
     display: flex;
     background: linear-gradient( to bottom, #99b1b1 0%, #99b1b1 50%, #efefef 50%, #efefef 100%);
+
+    img {
+      margin-bottom: 0;
+    }
   }
 
   &-promo {
