@@ -54,8 +54,8 @@ export default ({data, pageContext}) => {
 }
 
 export const query = graphql`
-    query BlogPageQuery($skip: Int, $limit: Int = 1) {
-        allContentfulPost(skip: $skip, limit: $limit) {
+    query BlogPageQuery($skip: Int = 0, $limit: Int = 1) {
+        allContentfulPost(skip: $skip, limit: $limit, sort: {fields: createdAt, order: DESC}) {
             nodes {
                 title
                 slug

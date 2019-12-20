@@ -18,7 +18,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     }
                 }
             }
-            allContentfulPost {
+            allContentfulPost(sort: {fields: createdAt, order: DESC}) {
                 nodes {
                     id
                     slug
@@ -31,9 +31,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
     }
 
-    const { createPage } = actions;
-    const postsPerPage = 6;
-    const pagesCount = Math.ceil(pagesSlugs.data.allContentfulPost.nodes.length / postsPerPage);
+    const { createPage }    = actions;
+    const postsPerPage      = 6;
+    const posts             = pagesSlugs.data.allContentfulPost.nodes;
+    const pagesCount        = Math.ceil(posts.length / postsPerPage);
 
     for ( let i = 0; i < pagesCount; i++ ) {
         createPage({
@@ -48,12 +49,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         });
     }
 
-    pagesSlugs.data.allContentfulPost.nodes.forEach(node => {
+    posts.forEach((node, index) => {
         createPage({
             path: `/blog/${node.slug}`,
             component: path.resolve(`./src/components/blog-post/blog-post.js`),
             context: {
-                id: node.id
+                id: node.id,
+                prevPost: ( index !== 0 && posts[index - 1] ) ? posts[index - 1].slug : null,
+                nextPost: ( index !== posts.length - 1 ) && posts[index + 1] ? posts[index + 1].slug : null,
             },
         });
     });
