@@ -1,5 +1,6 @@
 .banner-section {
     display: flex;
+    height: calc(100vh - 124px);
     min-height: 750px;
 
     &__left {

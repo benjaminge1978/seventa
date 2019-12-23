@@ -9,14 +9,14 @@ import Cases from '../components/home-page/cases/cases';
 import Customers from "../components/home-page/customers/customers";
 import Services from '../components/home-page/services/services';
 
-const IndexPage = props => {
+const IndexPage = ({ data }) => {
     return (
         <Layout>
             <SEO title="Home" />
             <Banner />
             <Promo />
             <ContainerLabelled className="cases-section" label={<span className="section-label">Cases ——</span>}>
-                <Cases data={props.data}/>
+                <Cases data={data}/>
             </ContainerLabelled>
             <Services />
             <ContainerLabelled className="customers-section" label={<span className="section-label">Customers ——</span>}>
@@ -42,6 +42,7 @@ export const query = graphql`
                                 src
                             }
                         }
+                        id
                         title
                         thumb_excerpt
                         slug
