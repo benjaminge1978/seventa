@@ -6,16 +6,16 @@ import "./cases.scss";
 export default props => {
     let index = -1;
     const alreadyShowed = [];
+    const edges = props.data.allContentfulCaseCategory.edges;
 
     return (
         <div className="cases-list">
             {
-                props.data.allContentfulCaseCategory.edges.map(item => {
+                edges.map(item => {
                     const node = item.node;
 
                     if ( node.cases && node.cases.length ) {
-
-                        for ( let i = 0; i <= node.cases.length; i++ ) {
+                        for ( let i = 0; i < node.cases.length; i++ ) {
                             const { id } = node.cases[i];
 
                             if ( ! alreadyShowed.includes(id) ) {

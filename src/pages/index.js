@@ -29,8 +29,8 @@ const IndexPage = ({ data }) => {
 export default IndexPage;
 
 export const query = graphql`
-        query IndexPageQuery {
-        allContentfulCaseCategory {
+    query IndexPageQuery {
+        allContentfulCaseCategory(sort: {fields: name, order: ASC}) {
             edges {
                 node {
                     slug

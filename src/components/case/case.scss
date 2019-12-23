@@ -1,6 +1,7 @@
 .cases-item {
   padding-bottom: 15px;
   margin-bottom: 20px;
+  perspective: 1000px;
 
   &--1 {
     grid-column-start: 1;
