@@ -20,10 +20,6 @@ const Case = props => {
                         to={{
                             transform: "rotate3d(1, 0.36, .04, -45deg)"
                         }}
-                        duration={500}
-                        style={{
-                            willChange: "transform",
-                        }}
                     >
                         <div className="cases-item__thumb">
                             <img className="cases-item__img" src={props.src} alt={props.title}/>
