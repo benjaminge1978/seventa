@@ -1,52 +1,26 @@
 import React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PageHeading from "../components/page-heading/page-heading";
 import ContainerLabelled from "../components/container-labelled/container-labelled";
 import Arrow from "../images/arrow-down.svg";
-import PortfolioItem from "../components/portfolio/portfolio-item";
+import CaseStudiesItem from "../components/case-studies/case-studies-item";
 
-import "./scss/portfolio.scss";
+import "./scss/case-studies.scss";
 
-export default () => {
-    const caseCategories = useStaticQuery(graphql`
-        query CaseCategoriesQuery {
-            allContentfulCaseCategory {
-                nodes {
-                    name
-                    slug
-                    image {
-                        fixed(width: 700, height: 540) {
-                            src
-                        }
-                        title
-                    }
-                    description {
-                        childContentfulRichText {
-                            html
-                        }
-                    }
-                }
-            }
-        }
-    `);
-
-    if ( caseCategories.errors ) {
-        return null;
-    }
-
-    const categories = caseCategories.allContentfulCaseCategory.nodes;
+export default ({data}) => {
+    const categories = data.allContentfulCaseCategory.nodes;
 
     return (
-        <Layout className="portfolio-page">
-            <SEO title="Portfolio"/>
+        <Layout className="case-studies-page">
+            <SEO title="Case Studies"/>
             <PageHeading
-                pageName="Portfolio"
+                pageName="Case Studies"
                 pageTitle="Here is the title about the portfolio"
                 description="At Seventa we take pride in knowing our customers. Completely leverage existing real-time information. Dramatically orchestrate web-enabled mosql."
             >
-                <ul className="portfolio-heading-links">
+                <ul className="case-studies-heading-links">
                     <li><Link to="/brand-activation">Brand activation</Link></li>
                     <li><Link to="/conferences">Conferences</Link></li>
                     <li><Link to="/event-production">Event production</Link></li>
@@ -56,12 +30,12 @@ export default () => {
             </PageHeading>
             {
                 categories
-                ?   <ContainerLabelled label={<Arrow />} className="portfolio-section" >
-                        <div className="portfolio-list">
+                ?   <ContainerLabelled label={<Arrow />} className="case-studies-section" >
+                        <div className="case-studies-list">
                             {
                                 categories.map((category, index) => (
-                                    <Link className="portfolio-category" to={`/${category.slug}`} key={index}>
-                                        <PortfolioItem
+                                    <Link className="case-studies-category" to={`/${category.slug}`} key={index}>
+                                        <CaseStudiesItem
                                             title={category.name}
                                             thumbSrc={category.image.fixed.src}
                                             excerpt={category.description.childContentfulRichText.html}
@@ -76,3 +50,25 @@ export default () => {
         </Layout>
     );
 }
+
+export const query = graphql`
+    query CaseCategoriesQueryOut {
+        allContentfulCaseCategory {
+            nodes {
+                name
+                slug
+                image {
+                    fixed(width: 700, height: 540) {
+                        src
+                    }
+                    title
+                }
+                description {
+                    childContentfulRichText {
+                        html
+                    }
+                }
+            }
+        }
+    }
+`;

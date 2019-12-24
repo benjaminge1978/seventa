@@ -22,8 +22,8 @@
                 margin: 0 70px;
             }
 
-            &__text span {
-               display: block;
+            &__text {
+                max-width: 700px;
             }
         }
     }
@@ -33,7 +33,7 @@
         display: flex;
         flex-wrap: nowrap;
         left: 0;
-        bottom: -55%;
+        bottom: -60%;
         padding: 70px;
         color: #313131;
         font-size: .8rem;
@@ -41,8 +41,13 @@
         &__item {
             width: 20%;
 
+            a {
+                display: block;
+            }
+
             h3 {
                 font-weight: 400;
+                margin-bottom: .7rem;
 
                 a {
                     color: inherit;

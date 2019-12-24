@@ -35,34 +35,34 @@ export default () => {
             </div>
             <div className="services-cards">
                 <div className="services-cards__item">
-                    <img src={images.allFile.nodes[0].publicURL} alt="Brand activation" />
+                    <Link to="/brand-activation"><img src={images.allFile.nodes[0].publicURL} alt="Brand activation" /></Link>
                     <h3><Link to="/brand-activation">Brand activation</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
-                    <Arrow />
+                    <Link to="/brand-activation"><Arrow /></Link>
                 </div>
                 <div className="services-cards__item">
-                    <img src={images.allFile.nodes[1].publicURL} alt="Conferences" />
+                    <Link to="/brand-activation"><img src={images.allFile.nodes[1].publicURL} alt="Conferences" /></Link>
                     <h3><Link to="/conferences">Conferences</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
-                    <Arrow />
+                    <Link to="/brand-activation"><Arrow /></Link>
                 </div>
                 <div className="services-cards__item">
-                    <img src={images.allFile.nodes[2].publicURL} alt="Event production" />
+                    <Link to="/brand-activation"><img src={images.allFile.nodes[2].publicURL} alt="Event production" /></Link>
                     <h3><Link to="/event-production">Event production</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
-                    <Arrow />
+                    <Link to="/brand-activation"><Arrow /></Link>
                 </div>
                 <div className="services-cards__item">
-                    <img src={images.allFile.nodes[3].publicURL} alt="Event management" />
+                    <Link to="/brand-activation"><img src={images.allFile.nodes[3].publicURL} alt="Event management" /></Link>
                     <h3><Link to="/event-management">Event management</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
-                    <Arrow />
+                    <Link to="/brand-activation"><Arrow /></Link>
                 </div>
                 <div className="services-cards__item">
-                    <img src={images.allFile.nodes[4].publicURL} alt="Venue sourcing" />
+                    <Link to="/brand-activation"><img src={images.allFile.nodes[4].publicURL} alt="Venue sourcing" /></Link>
                     <h3><Link to="/venue-sourcing">Venue sourcing</Link></h3>
                     <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
-                    <Arrow />
+                    <Link to="/brand-activation"><Arrow /></Link>
                 </div>
             </div>
         </div>

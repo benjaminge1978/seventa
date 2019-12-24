@@ -22,7 +22,7 @@ export default props => {
                                 alreadyShowed.push(id);
                                 index++;
 
-                                const { title, thumb_excerpt, thumbnail } = node.cases[i];
+                                const { title, thumb_excerpt, thumbnail, slug } = node.cases[i];
 
                                 return (
                                     <Case
@@ -32,6 +32,7 @@ export default props => {
                                         src={thumbnail.fixed.src}
                                         title={title}
                                         thumbDesc={thumb_excerpt}
+                                        slug={slug}
                                     />
                                 );
                             }

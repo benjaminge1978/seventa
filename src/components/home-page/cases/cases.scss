@@ -1,6 +1,7 @@
 .cases-section {
     display: flex;
-    margin: 110px 0;
+    margin-bottom: 110px;
+    background: linear-gradient(to bottom, #EFEFEF 0%, #EFEFEF 10%, white 10%);
 
     .section-label {
         display: block;

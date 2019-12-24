@@ -1,4 +1,4 @@
-.portfolio {
+.case-studies {
 
   &-heading-links {
     list-style-type: none;
@@ -34,17 +34,17 @@
       &__inner {
         padding-right: 175px;
 
-        .portfolio-list {
+        .case-studies-list {
           display: flex;
           flex-wrap: wrap;
 
-          .portfolio-category {
+          .case-studies-category {
             width: 49%;
             margin-right: 2%;
             margin-bottom: 4rem;
             color: inherit;
 
-            .portfolio-list-item {
+            .case-studies-list-item {
 
               &__thumb {
 
@@ -77,7 +77,7 @@
 }
 
 @media all and (max-width: 992px) {
-  .portfolio {
+  .case-studies {
 
     &-section {
 
@@ -93,7 +93,7 @@
 }
 
 @media all and (max-width: 992px) {
-  .portfolio {
+  .case-studies {
 
     &-section {
 

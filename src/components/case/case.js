@@ -1,44 +1,18 @@
 import React from "react";
+import { Link } from "gatsby";
 import PropsTypes from "prop-types";
 import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Controls } from "react-gsap";
+import { Tween } from "react-gsap";
 import Arrow from "../../images/case-study-arrow.svg";
 
 import "./case.scss";
 
-const Case = props => {
-    const itemClasses = props.index % 2 === 0 ? 'left' : 'right';
+const Case = ({ index, thumbDesc, title, src, category, slug }) => {
+    const itemClasses = index % 2 === 0 ? 'left' : 'right';
+    const caseSlug = `/${slug}`;
 
     return (
-        <div className={`cases-item cases-item--${itemClasses} cases-item--${props.index + 1}`}>
-            {/*<Controller>*/}
-            {/*    <Scene duration={2000}>*/}
-            {/*        <Tween*/}
-            {/*            from={{*/}
-            {/*                transform: "rotate3d(1, 0.49, -0.12, 45deg)"*/}
-            {/*            }}*/}
-            {/*            to={{*/}
-            {/*                transform: "rotate3d(1, 0.36, .04, -45deg)"*/}
-            {/*            }}*/}
-            {/*        >*/}
-            {/*            <div className="cases-item__thumb">*/}
-            {/*                <img className="cases-item__img" src={props.src} alt={props.title}/>*/}
-            {/*                {*/}
-            {/*                    props.thumbDesc*/}
-            {/*                        ? <span className="cases-item__description">{props.thumbDesc}</span>*/}
-            {/*                        : null*/}
-            {/*                }*/}
-            {/*            </div>*/}
-            {/*        </Tween>*/}
-            {/*    </Scene>*/}
-            {/*            <div className="cases-item__heading">*/}
-            {/*                <span className="case-heading-arrow"><Arrow /></span>*/}
-            {/*                <div className="case-heading-text">*/}
-            {/*                    <p>{props.category}</p>*/}
-            {/*                    <h3>{props.title}</h3>*/}
-            {/*                </div>*/}
-            {/*            </div>*/}
-            {/*</Controller>*/}
+        <div className={`cases-item cases-item--${itemClasses} cases-item--${index + 1}`}>
             <Controller>
                 <Scene duration={2000}>
                     <Tween
@@ -50,23 +24,25 @@ const Case = props => {
                             transform: "scale3d(1.3, 1.3, 1)"
                         }}
                     >
-                        <div className="cases-item__thumb">
-                            <img className="cases-item__img" src={props.src} alt={props.title}/>
+                        <Link to={caseSlug} className="cases-item__thumb">
+                            <img className="cases-item__img" src={src} alt={title}/>
                             {
-                                props.thumbDesc
-                                    ? <span className="cases-item__description">{props.thumbDesc}</span>
+                                thumbDesc
+                                    ? <span className="cases-item__description">{thumbDesc}</span>
                                     : null
                             }
-                        </div>
+                        </Link>
                     </Tween>
                 </Scene>
-                <div className="cases-item__heading">
-                    <span className="case-heading-arrow"><Arrow /></span>
-                    <div className="case-heading-text">
-                        <p>{props.category}</p>
-                        <h3>{props.title}</h3>
+                <Scene>
+                    <div className="cases-item__heading">
+                        <span className="case-heading-arrow"><Arrow /></span>
+                        <div className="case-heading-text">
+                            <p>{category}</p>
+                            <h3><Link to={caseSlug}>{title}</Link></h3>
+                        </div>
                     </div>
-                </div>
+                </Scene>
             </Controller>
         </div>
     )
@@ -77,6 +53,7 @@ Case.propTypes = {
     category: PropsTypes.string.isRequired,
     thumbDesc: PropsTypes.string,
     index: PropsTypes.number.isRequired,
+    slug: PropsTypes.string.isRequired,
 };
 
 Case.defaultProps = {
