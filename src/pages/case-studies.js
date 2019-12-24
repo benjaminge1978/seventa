@@ -34,13 +34,14 @@ export default ({data}) => {
                         <div className="case-studies-list">
                             {
                                 categories.map((category, index) => (
-                                    <Link className="case-studies-category" to={`/${category.slug}`} key={index}>
+                                    <div className="case-studies-category" key={index}>
                                         <CaseStudiesItem
                                             title={category.name}
                                             thumbSrc={category.image.fixed.src}
                                             excerpt={category.description.childContentfulRichText.html}
+                                            slug={category.slug}
                                         />
-                                    </Link>
+                                    </div>
                                 ))
                             }
                         </div>

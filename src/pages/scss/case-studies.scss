@@ -55,6 +55,10 @@
 
               &__title {
                 margin-bottom: .5rem;
+
+                a {
+                  color: inherit;
+                }
               }
 
               &__excerpt {

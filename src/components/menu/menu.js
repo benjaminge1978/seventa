@@ -13,7 +13,9 @@ function subMenuOutput(menuItems, menuLevel) {
                     <li key={index} className="menu-item">
                         <LinkItem
                             href={subLink.href}
-                            external={'undefined' !== typeof subLink.external && true === subLink.external}>
+                            external={'undefined' !== typeof subLink.external && true === subLink.external}
+                            className="animated-link"
+                        >
                             {subLink.text}
                         </LinkItem>
                     </li>
@@ -40,7 +42,9 @@ const Menu = ({ links, id }) => {
                                     href
                                         ?   <LinkItem
                                                 href={href}
-                                                external={'undefined' !== typeof external && true === external}>
+                                                external={'undefined' !== typeof external && true === external}
+                                                className="animated-link"
+                                            >
                                                 {text}
                                             </LinkItem>
                                         : <span className="menu-placeholder">{text}</span>

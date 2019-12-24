@@ -636,3 +636,24 @@ a {
     font-size: 100%;
   }
 }
+
+a.animated-link {
+  position: relative;
+  display: inline-block;
+  color: #313131;
+}
+
+a.animated-link:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #313131;
+  transition: width ease .3s;
+}
+
+a.animated-link:hover:after {
+  width: 100%;
+}

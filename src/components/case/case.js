@@ -39,7 +39,7 @@ const Case = ({ index, thumbDesc, title, src, category, slug }) => {
                         <span className="case-heading-arrow"><Arrow /></span>
                         <div className="case-heading-text">
                             <p>{category}</p>
-                            <h3><Link to={caseSlug}>{title}</Link></h3>
+                            <h3><Link className="animated-link" to={caseSlug}>{title}</Link></h3>
                         </div>
                     </div>
                 </Scene>

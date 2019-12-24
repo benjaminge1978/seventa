@@ -7,15 +7,19 @@ import "./blog-post-preview.scss";
 
 const BlogPostPreview = ({title, excerpt, thumb, date, slug}) => {
     return (
-        <Link to={`/blog/${slug}`} className="blog-post-preview">
-            <figure className="blog-post-preview__thumb">
+        <div className="blog-post-preview">
+            <Link to={`/blog/${slug}`} className="blog-post-preview__thumb">
                 <img src={thumb.src} alt={thumb.title} />
-            </figure>
+            </Link>
             <p className="blog-post-preview__date">{date}</p>
-            <h2 className="blog-post-preview__title">{title}</h2>
+            <h2 className="blog-post-preview__title">
+                <Link to={`/blog/${slug}`} className="animated-link">
+                    {title}
+                </Link>
+            </h2>
             <p className="blog-post-preview__excerpt">{excerpt}</p>
             <Arrow />
-        </Link>
+        </div>
     );
 };
 

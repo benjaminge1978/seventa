@@ -6,11 +6,12 @@ ul#header-menu {
     li {
         display: inline-block;
         margin-bottom: 0;
+        padding: 0 25px;
 
         a, .menu-placeholder {
             display: block;
-            padding: 0 25px;
             color: #000;
+            font-size: 20px;
         }
 
         .menu-placeholder {

@@ -3,6 +3,7 @@ header.site-header {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: center;
     position: relative;
 
     .site-header-brand {
