@@ -7,10 +7,14 @@ ul#header-menu {
         display: inline-block;
         margin-bottom: 0;
 
-        a {
+        a, .menu-placeholder {
             display: block;
             padding: 0 25px;
             color: #000;
+        }
+
+        .menu-placeholder {
+            cursor: pointer;
         }
 
         ul.submenu {
@@ -23,6 +27,7 @@ ul#header-menu {
             background-color: #fff;
             border-radius: 3px;
             box-shadow: 0 0 7px #e3e3e3;
+            z-index: 5;
 
             li {
 

@@ -80,7 +80,8 @@ export default class extends React.Component {
         ];
 
         const topMenuLinks = [
-            {href: 'case-studies', text: 'Case Studies', submenu: submenuLinks},
+            {href: '', text: 'Services',  submenu: submenuLinks},
+            {href: 'case-studies', text: 'Case Studies'},
             {href: 'about', text: 'About'},
             {href: 'blog', text: 'Blog'},
             {href: 'contact', text: 'Contact'},

@@ -32,14 +32,19 @@ const Menu = ({ links, id }) => {
                 {
                     links.map((link, index) => {
                         const hasSubmenu = link.submenu && link.submenu.length;
+                        const { text, external, href } = link;
 
                         return (
                             <li key={index} className={'menu-item' + (hasSubmenu ? ' has-submenu' : '')}>
-                                <LinkItem
-                                    href={link.href}
-                                    external={'undefined' !== typeof link.external && true === link.external}>
-                                    {link.text}
-                                </LinkItem>
+                                {
+                                    href
+                                        ?   <LinkItem
+                                                href={href}
+                                                external={'undefined' !== typeof external && true === external}>
+                                                {text}
+                                            </LinkItem>
+                                        : <span className="menu-placeholder">{text}</span>
+                                }
                                 {
                                     hasSubmenu
                                         ?   subMenuOutput(link.submenu, menuLevel)
