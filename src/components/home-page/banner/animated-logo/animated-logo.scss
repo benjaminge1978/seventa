@@ -1,0 +1,26 @@
+.athene-intro-logo-wrapper {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 300;
+}
+
+.athene-intro-logo {
+  text-align: center;
+  width: 200px;
+}
+
+.athene-intro-logo img{
+  position: absolute;
+  width: 200px;
+}
+
+.mask-block {
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}

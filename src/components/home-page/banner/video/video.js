@@ -1,28 +1,61 @@
 import React from "react";
-import PropsTypes from "prop-types";
 
-import "./video.scss";
+export default class extends React.Component {
+    constructor(props) {
+        super(props);
 
-const Video = ({videoSrc, title}) => {
-    return (
-        <div className="banner-section__video">
-            <iframe
-                src="https://player.vimeo.com/video/381300857?autoplay=1&loop=1&muted=1&controls=0"
-                allow="autoplay"
-                frameBorder="0"
-                title="Seventa promo"
-            />
-        </div>
-    );
-};
+        this.state = {
+            iframeWidth: 640,
+            iframeHeight: 360,
+            iframeStyle: {
+                transform: 'translate(0, 0)',
+            },
+        };
 
-Video.propsTypes = {
-    videoSrc: PropsTypes.string.isRequired,
-    title: PropsTypes.string.isRequired,
-};
+        this.iframe = React.createRef();
+        this.changeIframeAspectRatio = this.changeIframeAspectRatio.bind(this);
+    }
 
-Video.defaultProps = {
-    title: '',
-};
+    componentDidMount() {
+        window.addEventListener('resize', this.changeIframeAspectRatio);
+        this.changeIframeAspectRatio();
+    }
 
-export default Video;
+    changeIframeAspectRatio() {
+        const { offsetHeight, offsetWidth } = document.getElementById('banner-section-video'),
+            { iframeWidth, iframeHeight } = this.state,
+            scaleV = offsetHeight / iframeHeight,
+            scaleH = offsetWidth / iframeWidth,
+            scale = iframeHeight * scaleH < offsetHeight ? scaleV : Math.max(scaleV, scaleH),
+            newIframeWidth = iframeWidth * scale,
+            newIframeHeight = iframeHeight * scale;
+
+        this.setState({
+            iframeWidth: newIframeWidth,
+            iframeHeight: newIframeHeight,
+            iframeStyle: {
+                transform: `translate(-${(newIframeWidth - offsetWidth) / 2}px, -${(newIframeHeight - offsetHeight) / 2}px)`,
+            }
+        });
+    }
+
+    render() {
+        const { iframeWidth, iframeHeight, iframeStyle} = this.state;
+
+        return (
+            <div id="banner-section-video" className="banner-section__video">
+                <iframe
+                    id="banner-video-iframe"
+                    src="https://player.vimeo.com/video/381300857?autoplay=1&loop=1&muted=1&controls=0"
+                    allow="autoplay"
+                    frameBorder="0"
+                    title="Seventa promo"
+                    width={iframeWidth}
+                    height={iframeHeight}
+                    style={iframeStyle}
+                    ref={this.iframe}
+                />
+            </div>
+        );
+    }
+}
