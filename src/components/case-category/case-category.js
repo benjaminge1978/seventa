@@ -25,7 +25,7 @@ export default ({data}) => {
             />
             {
                 category.cases && category.cases.length
-                ?   <ContainerLabelled label={<Arrow />}>
+                ?   <ContainerLabelled label={<Arrow />} className="category-page-cases--wrapper">
                         <div className="category-page-cases">
                             {
                                 category.cases.map((caseItem, index) => (

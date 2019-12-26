@@ -1,7 +1,7 @@
 .blog-page {
 
   &-heading {
-    padding-bottom: 300px;
+    padding-bottom: 200px;
     position: relative;
 
     &:after {
@@ -52,6 +52,7 @@
       &__date {
         color: #9b9b9b;
         font-size: 1.2rem;
+        margin-top: 15px;
         margin-bottom: .6rem;
       }
 

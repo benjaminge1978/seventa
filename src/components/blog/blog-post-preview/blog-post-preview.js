@@ -3,8 +3,6 @@ import PropsTypes from "prop-types";
 import { Link } from "gatsby";
 import Arrow from "../../../images/arrow-right.svg";
 
-import "./blog-post-preview.scss";
-
 const BlogPostPreview = ({title, excerpt, thumb, date, slug}) => {
     return (
         <div className="blog-post-preview">

@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../layout";
 import SEO from "../seo";
 import PageHeading from "../page-heading/page-heading";
@@ -26,7 +26,7 @@ export default ({data, pageContext}) => {
                 <p>{excerpt}</p>
             </PageHeading>
             <ContainerLabelled
-                label={<ArrowLeft />}
+                label={<Link to="/blog"><ArrowLeft /></Link>}
                 className="blog-post-single__thumbnail"
                 innerClassName="blog-post-img-wrapper"
             >

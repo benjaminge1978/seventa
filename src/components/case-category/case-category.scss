@@ -1,4 +1,8 @@
 .case-category {
+  
+  .page-heading {
+    background-color: #efefef;
+  }
 
   .page-heading__description p {
     font-size: 1.2rem;
@@ -11,6 +15,7 @@
       display: block;
       width: 15px;
       margin: 0 auto;
+      padding-top: 100px;
     }
   }
 
@@ -18,5 +23,9 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 200px;
+  }
+
+  .category-page-cases--wrapper {
+    background: linear-gradient( to bottom, #efefef 0%, #efefef 30%, white 30%);
   }
 }

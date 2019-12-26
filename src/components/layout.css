@@ -637,6 +637,15 @@ a {
   }
 }
 
+::-ms-input-placeholder, :-ms-input-placeholder, ::placeholder {
+  color: #313131;
+  opacity: 1;
+}
+
+html {
+  padding-top: 118px;
+}
+
 a.animated-link {
   position: relative;
   display: inline-block;

@@ -1,18 +1,53 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PageHeading from "../components/page-heading/page-heading";
+import ContainerLabelled from "../components/container-labelled/container-labelled";
+import Arrow from "../images/arrow-down.svg";
+import OfficeLocation from "../components/footer/greybox/offices/offices";
+import ContactForm from "../components/contact/form/form";
 
-export default () => {
+import "./scss/contact.scss";
+
+export default ({ data }) => {
+    const { name, publicURL } = data.file;
+
     return (
-        <Layout>
+        <Layout className="contact-page">
             <SEO title="Contact"/>
             <PageHeading
                 pageName="Contact us"
-                pageTitle="Contact us"
-                description="At Seventa we take pride in knowing our customers. Completely leverage existing real-time information. Dramatically orchestrate web-enabled mosql."
+                pageTitle="We'd love to hear from you."
+                description="Get in touch with the team to discuss how we can help with your project."
                 className="contact-page-heading"
             />
+            <ContainerLabelled
+                className="contact-page-darkgrey"
+                label={<Arrow />}
+            >
+                <figure>
+                    <img src={publicURL} alt={name} />
+                </figure>
+                <div className="contact-data">
+                    <h3><a href="mailto:info@seventa.co.uk">E: info@seventa.co.uk</a></h3>
+                    <h3><a href="tel:00441202237433">T: 1202 237 433</a></h3>
+                    <OfficeLocation />
+                </div>
+            </ContainerLabelled>
+            <ContainerLabelled className="contact-page-form-section">
+                <h3>Set up a phone call</h3>
+                <ContactForm />
+            </ContainerLabelled>
         </Layout>
     );
 }
+
+export const query = graphql`
+    query ContactPageImage {
+        file(relativePath: {eq: "seventa-about-us-header-image.jpg"}) {
+            publicURL
+            name
+        }
+    }
+`;
