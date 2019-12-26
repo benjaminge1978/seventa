@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "gatsby";
 import { gsap, TimelineMax, TweenMax } from "gsap/all";
 import SplitText from "gsap/SplitText";
-// import ScrollMagic from "scrollmagic";
+import ScrollMagic from "scrollmagic";
 import PropsTypes from "prop-types";
 import Arrow from "../../images/case-study-arrow.svg";
-// import "scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap";
-// import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
+import "scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap";
+import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
 
 import "./case.scss";
 
@@ -14,22 +14,22 @@ export default class Case extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.controller = new ScrollMagic.Controller();
+        this.controller = new ScrollMagic.Controller();
         this.imgRef = React.createRef();
-        // this.triggerElement = React.createRef();
+        this.triggerElement = React.createRef();
     }
 
-    // componentDidMount() {
-    //     new ScrollMagic.Scene({
-    //         triggerElement: this.triggerElement.current,
-    //         duration: 500,
-    //         offset: 0,
-    //     })
-    //         .setTween(this.imgRef.current, {
-    //             scale: 0.5,
-    //         })
-    //         .addTo(this.controller);
-    // }
+    componentDidMount() {
+        new ScrollMagic.Scene({
+            triggerElement: this.triggerElement.current,
+            duration: 500,
+            offset: 0,
+        })
+            .setTween(this.imgRef.current, {
+                scale: 0.5,
+            })
+            .addTo(this.controller);
+    }
 
     render() {
         const { index, thumbDesc, title, src, category, slug } = this.props;
