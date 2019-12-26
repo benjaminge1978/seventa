@@ -1,49 +1,53 @@
-import React, { Fragment, Component } from "react";
-import gsap from "gsap";
-// import { TimelineLite, Power3, Back } from "gsap/all";
+import React from "react";
+import {gsap, Power3, TimelineMax} from "gsap";
+import SplitText from "gsap/SplitText";
 import Video from "./video/video";
 import Arrow from "../../../images/arrow-down.svg"
 import AnimatedLogo from "./animated-logo/animated-logo";
 
 import "./banner.scss"
 
-export default class extends Component {
+export default class extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            logoShowed: false,
-        };
+        this.splitTextRef = React.createRef();
+        this.splitText = null;
+        this.timeline = new TimelineMax();
+    }
+
+    componentDidMount() {
+        this.splitText = new SplitText('.banner-text', {type: "words, lines, chars"});
+    }
+
+    animateVideoText() {
+        // this.timeline.staggerFrom(this.splitText.words, 1, {
+        //         opacity: 0,
+        //         y: 100,
+        //         ease: Power3.easeOut
+        //     },
+        //     0.09,
+        //     "-=0.9"
+        // );
     }
 
     render() {
-        const { logoShowed } = this.state;
-
         return (
-            <Fragment>
-                <div className="banner-section">
-                    <div className="banner-section__left">
-                        <Arrow />
-                    </div>
-                    <div className="banner-section__inner">
-                        {
-                            logoShowed
-                                ?   <Fragment>
-                                        <h2 className="banner-text">
-                                            <span>We love experiences.</span>
-                                            <span>We create them.</span>
-                                        </h2>
-                                        <div className="baner-section-video-position" style={{height: '100%'}}>
-                                            <Video />
-                                        </div>
-                                    </Fragment>
-                                :   <AnimatedLogo animComplete={() => { this.setState({logoShowed: true}) }} />
-                        }
-                    </div>
+            <div className="banner-section">
+                <div className="banner-section__left">
+                    <Arrow />
                 </div>
-            </Fragment>
-        )
+                <div className="banner-section__inner">
+                    <h2 className="banner-text" ref={this.splitTextRef}>
+                        <span>We love experiences.</span>
+                        <span>We create them.</span>
+                    </h2>
+                    <Video />
+                    <AnimatedLogo animCompleted={() => {this.animateVideoText()}}/>
+                </div>
+            </div>
+        );
     }
 }
 
-// gsap.registerPlugin();
+gsap.registerPlugin(TimelineMax, SplitText);

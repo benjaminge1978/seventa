@@ -5,6 +5,8 @@
   height: 100%;
   width: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 300;
 }
 
@@ -20,7 +22,10 @@
 
 .mask-block {
   z-index: 200;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   position: absolute;
+  background-color: #fff;
 }

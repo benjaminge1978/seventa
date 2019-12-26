@@ -41,6 +41,7 @@
 
   &__thumb {
     position: relative;
+    display: block;
 
     img {
       display: block;
@@ -62,6 +63,13 @@
 
     .cases-item__description {
       display: none;
+    }
+  }
+
+  &:hover {
+
+    .cases-item__description {
+      display: block;
     }
   }
 

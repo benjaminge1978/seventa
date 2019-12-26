@@ -67,7 +67,8 @@
         &__inner {
 
           .long-dash-text__content {
-            max-width: 100%;
+          width: 100%;
+            max-width: 1200px;
 
             p {
               font-size: 2rem;
@@ -106,6 +107,10 @@
       img, picture {
         margin-bottom: 0;
         display: block;
+      }
+
+      img {
+        margin-left: auto;
       }
     }
   }

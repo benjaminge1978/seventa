@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 export default class extends React.Component {
     constructor(props) {
@@ -19,6 +19,7 @@ export default class extends React.Component {
     componentDidMount() {
         window.addEventListener('resize', this.changeIframeAspectRatio);
         this.changeIframeAspectRatio();
+
     }
 
     changeIframeAspectRatio() {
@@ -40,22 +41,26 @@ export default class extends React.Component {
     }
 
     render() {
-        const { iframeWidth, iframeHeight, iframeStyle} = this.state;
+        const { iframeWidth, iframeHeight, iframeStyle } = this.state;
 
         return (
-            <div id="banner-section-video" className="banner-section__video">
-                <iframe
-                    id="banner-video-iframe"
-                    src="https://player.vimeo.com/video/381300857?autoplay=1&loop=1&muted=1&controls=0"
-                    allow="autoplay"
-                    frameBorder="0"
-                    title="Seventa promo"
-                    width={iframeWidth}
-                    height={iframeHeight}
-                    style={iframeStyle}
-                    ref={this.iframe}
-                />
-            </div>
+            <Fragment>
+                <div className="baner-section-video-position" style={{height: '100%'}}>
+                    <div id="banner-section-video" className="banner-section__video">
+                        <iframe
+                            id="banner-video-iframe"
+                            src="https://player.vimeo.com/video/381300857?autoplay=1&loop=1&muted=1&controls=0"
+                            allow="autoplay"
+                            frameBorder="0"
+                            title="Seventa promo"
+                            width={iframeWidth}
+                            height={iframeHeight}
+                            style={iframeStyle}
+                            ref={this.iframe}
+                        />
+                    </div>
+                </div>
+            </Fragment>
         );
     }
 }

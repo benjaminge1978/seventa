@@ -20,7 +20,7 @@ export default class extends React.Component {
         this.masBlockRef = React.createRef();
         this._timelineMax = new TimelineMax({
             paused: true,
-            onComplete: props.animComplete,
+            onComplete: props.animCompleted,
         });
     }
 
@@ -47,7 +47,18 @@ export default class extends React.Component {
                 },
                 0.03,
                 "-=0.2"
-            ).play();
+            )
+            .to(
+                ".mask-block",
+                {
+                    duration: 1,
+                    scaleY: 0,
+                    transformOrigin: "top left",
+                    ease:Power3.easeOut
+                },
+                "-=0.4"
+            )
+            .play();
     }
 
     render() {

@@ -1,14 +1,34 @@
 import React from "react";
 import { Link } from "gatsby";
-
+import { gsap, TimelineMax, TweenMax } from "gsap/all";
+import SplitText from "gsap/SplitText";
+import ScrollMagic from "scrollmagic";
 import PropsTypes from "prop-types";
 import Arrow from "../../images/case-study-arrow.svg";
+import "scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap";
+import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
 
 import "./case.scss";
 
 export default class Case extends React.Component {
     constructor(props) {
         super(props);
+
+        this.controller = new ScrollMagic.Controller();
+        this.imgRef = React.createRef();
+        this.triggerElement = React.createRef();
+    }
+
+    componentDidMount() {
+        new ScrollMagic.Scene({
+            triggerElement: this.triggerElement.current,
+            duration: 500,
+            offset: 0,
+        })
+            .setTween(this.imgRef.current, {
+                scale: 0.5,
+            })
+            .addTo(this.controller);
     }
 
     render() {
@@ -17,9 +37,9 @@ export default class Case extends React.Component {
         const caseSlug = `/${slug}`;
 
         return (
-            <div className={`cases-item cases-item--${itemClasses} cases-item--${index + 1}`}>
+            <div className={`cases-item cases-item--${itemClasses} cases-item--${index + 1}`} ref={this.triggerElement}>
                         <Link to={caseSlug} className="cases-item__thumb">
-                            <img className="cases-item__img" src={src} alt={title} ref={this._imgRef}/>
+                            <img className="cases-item__img" src={src} alt={title} ref={this.imgRef}/>
                             {
                                 thumbDesc
                                     ? <span className="cases-item__description">{thumbDesc}</span>
@@ -50,3 +70,5 @@ Case.propTypes = {
 Case.defaultProps = {
     thumbDesc: ''
 };
+
+gsap.registerPlugin(TimelineMax, TweenMax, SplitText);
