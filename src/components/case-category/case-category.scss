@@ -29,3 +29,16 @@
     background: linear-gradient( to bottom, #efefef 0%, #efefef 30%, white 30%);
   }
 }
+
+@media all and (max-width: 768px) {
+  .case-category {
+
+    .page-heading {
+      padding-top: 75px;
+    }
+
+    .category-page-cases {
+      margin-bottom: 0;
+    }
+  }
+}

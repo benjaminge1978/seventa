@@ -80,7 +80,6 @@ export default class extends React.Component {
         ];
 
         const topMenuLinks = [
-            {href: '', text: 'Services',  submenu: submenuLinks},
             {href: 'case-studies', text: 'Case Studies'},
             {href: 'about', text: 'About'},
             {href: 'blog', text: 'Blog'},
@@ -90,7 +89,7 @@ export default class extends React.Component {
         return (
             <div className="header-navigation">
                 <nav className="header-menu-wrapper">
-                    <Menu id="header-menu" links={topMenuLinks}/>
+                    <Menu id="header-menu" links={[{href: '', text: 'Services',  submenu: submenuLinks}].concat(topMenuLinks)}/>
                 </nav>
                 <div className="mobile-menu-wrapper" ref={this.menu}>
                     <div className="mobile-menu">

@@ -96,8 +96,15 @@
   }
 }
 
-@media all and (max-width: 992px) {
+@media all and (max-width: 768px) {
   .case-studies {
+
+    &-page {
+
+      .page-heading {
+        padding-top: 60px;
+      }
+    }
 
     &-section {
 
@@ -105,9 +112,9 @@
 
         &__inner {
 
-          .portfolio-list {
+          .case-studies-list {
 
-            .portfolio-category {
+            .case-studies-category {
               width: 100%;
               margin-right: 0;
             }

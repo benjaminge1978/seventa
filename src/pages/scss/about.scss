@@ -36,6 +36,17 @@
       &:last-of-type {
         margin-right: 0;
       }
+
+      .team-member {
+
+        &__photo {
+          margin-bottom: .8rem;
+        }
+
+        &__position {
+          margin-bottom: 40px;
+        }
+      }
     }
   }
 }
@@ -156,11 +167,25 @@
           }
         }
       }
+
+      &--grey {
+
+        .container-labelled__inner {
+          padding: 75px 50px;
+        }
+      }
     }
   }
 }
 
 @media all and (max-width: 768px) {
+  .about-page-layout {
+
+      .page-heading {
+        padding-top: 60px;
+      }
+  }
+
   .team-members {
 
     &-list {

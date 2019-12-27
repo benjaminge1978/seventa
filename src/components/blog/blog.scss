@@ -82,6 +82,16 @@
   }
 }
 
+@media all and (max-width: 768px) {
+  .blog-page {
+
+    &-heading {
+      padding-top: 75px;
+      padding-bottom: 115px;
+    }
+  }
+}
+
 @media all and (max-width: 576px) {
   .blog-page {
 

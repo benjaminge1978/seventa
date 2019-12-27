@@ -208,5 +208,24 @@
   }
 }
 @media all and (max-width: 768px) {
+  .case-item {
 
+    &__heading {
+      padding-top: 75px;
+      padding-bottom: 105px;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .services-list {
+        margin-top: 65px;
+      }
+    }
+
+    .section-heading {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
 }

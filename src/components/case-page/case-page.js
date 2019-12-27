@@ -18,6 +18,8 @@ const CasePage = ({data}) => {
         seeMoreNodes = data.allContentfulCases.nodes,
         { bigImage, thumbnail, services, title, imagesRow, section1Subtitle, section1Title, section1Content, section2Subtitle, section2Title, section2Content, section3Subtitle, section3Title, section3Content, section3Image } = caseItem;
 
+    console.log(seeMoreNodes);
+
     return (
         <Layout className="case-page-layout">
             <SEO title={caseItem.title} />
@@ -119,7 +121,7 @@ const CasePage = ({data}) => {
                 }
 
                 {
-                    seeMoreNodes
+                    seeMoreNodes && seeMoreNodes.length
                     ?   <ContainerLabelled className="section--see-more">
                             <SeeMore
                                 cases={seeMoreNodes}
