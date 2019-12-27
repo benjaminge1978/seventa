@@ -32,8 +32,7 @@ export default ({data}) => {
                                     <CaseItem
                                         key={index}
                                         slug={caseItem.slug}
-                                        imgSrc={caseItem.thumbnail.fixed.src}
-                                        imgTitle={caseItem.thumbnail.fixed.title}
+                                        thumbnail={caseItem.thumbnail}
                                         caseTitle={caseItem.title}
                                         categories={caseItem.caseCategories}
                                     />)
@@ -65,10 +64,16 @@ export const query = graphql`
                 title
                 slug
                 thumbnail {
-                    fixed(width: 600, height: 600) {
-                        src
-                    }
                     title
+                    fluid(maxWidth: 600) {
+                        base64
+                        sizes
+                        src
+                        srcSet
+                        srcSetWebp
+                        srcWebp
+                        tracedSVG
+                    }
                 }
                 caseCategories {
                     slug
@@ -94,4 +99,5 @@ export const query = graphql`
             }
         }
     }
+
 `;

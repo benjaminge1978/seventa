@@ -1,14 +1,18 @@
 import React from "react"
 import PropsTypes from "prop-types"
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 import Arrow from "../../../images/case-study-arrow.svg";
 
 import './case-item.scss'
 
-const CaseItem = ({ slug, imgSrc, imgTitle, categories, caseTitle }) => (
+const CaseItem = ({ slug, categories, caseTitle, thumbnail }) => (
     <div className="case-category__item">
         <Link to={`/${slug}`}>
-            <img src={imgSrc} alt={imgTitle ? imgTitle : caseTitle} />
+            <Img
+                fluid={thumbnail.fluid}
+                alt={thumbnail.title}
+            />
         </Link>
         <div className="case-category-item-desc">
             <Arrow />
@@ -32,10 +36,9 @@ const CaseItem = ({ slug, imgSrc, imgTitle, categories, caseTitle }) => (
 
 CaseItem.propTypes = {
     slug: PropsTypes.string.isRequired,
-    imgSrc: PropsTypes.string.isRequired,
+    thumbnail: PropsTypes.object.isRequired,
     caseTitle: PropsTypes.string.isRequired,
     categories: PropsTypes.array.isRequired,
-    imgTitle: PropsTypes.string,
 };
 
 export default CaseItem

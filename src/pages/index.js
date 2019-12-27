@@ -41,6 +41,14 @@ export const query = graphql`
                             fixed {
                                 src
                             }
+                            fluid(quality: 80) {
+                                base64
+                                aspectRatio
+                                src
+                                srcSet
+                                srcSetWebp
+                                srcWebp
+                            }
                         }
                         id
                         title

@@ -3,10 +3,10 @@ import Case from "../../case/case";
 
 import "./cases.scss";
 
-export default props => {
+export default ({ data }) => {
     let index = -1;
     const alreadyShowed = [];
-    const edges = props.data.allContentfulCaseCategory.edges;
+    const edges = data.allContentfulCaseCategory.edges;
 
     return (
         <div className="cases-list">
@@ -29,7 +29,7 @@ export default props => {
                                         key={index}
                                         index={index}
                                         category={node.name}
-                                        src={thumbnail.fixed.src}
+                                        fluidImg={thumbnail}
                                         title={title}
                                         thumbDesc={thumb_excerpt}
                                         slug={slug}

@@ -18,7 +18,7 @@ const SeeMore = ({cases, catName}) => {
                     cases.map((node, index) => (
                         <CaseItem
                             key={index}
-                            imgSrc={node.thumbnail.fixed.src}
+                            thumbnail={node.thumbnail}
                             caseTitle={node.title}
                             categories={node.caseCategories}
                             slug={node.slug}

@@ -20,6 +20,10 @@
     .blog-post-img-wrapper {
       padding-right: 175px;
 
+      .gatsby-image-wrapper {
+        padding-top: 45%;
+      }
+
       img {
         display: block;
         width: 100%;

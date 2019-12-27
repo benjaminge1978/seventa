@@ -8,6 +8,7 @@ import ArrowLeft from "../../images/arrow-left.svg";
 import { BLOCKS } from '@contentful/rich-text-types';
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import FamiliarPostsLinks from "./familiar-posts-links";
+import Img from "gatsby-image";
 
 import "./blog-post.scss";
 
@@ -30,7 +31,10 @@ export default ({data, pageContext}) => {
                 className="blog-post-single__thumbnail"
                 innerClassName="blog-post-img-wrapper"
             >
-                <img src={thumbnail.fixed.src} alt={title} />
+                <Img
+                    fluid={thumbnail.fluid}
+                    alt={thumbnail.title}
+                />
             </ContainerLabelled>
             <div className="blog-post-single__content" dangerouslySetInnerHTML={{
                 __html: documentToHtmlString(content.json, {
@@ -61,9 +65,16 @@ export const query = graphql`
             }
             createdAt(formatString: "DD.MM.YYYY")
             thumbnail {
-                fixed(width: 1500, height: 700) {
+                fluid(quality: 75, maxHeight: 800) {
+                    base64
+                    sizes
                     src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                    tracedSVG
                 }
+                title
             }
             author {
                 name

@@ -9,6 +9,7 @@ import ContainerLabelled from "../container-labelled/container-labelled";
 import SectionHeading from "../section-heading/section-heading";
 import LongDashText from "../long-dash-text/long-dash-text";
 import Arrow from "../../images/arrow-left.svg";
+import Img from "gatsby-image";
 
 import "./case-page.scss";
 
@@ -17,8 +18,6 @@ const CasePage = ({data}) => {
         category = caseItem.caseCategories ? caseItem.caseCategories[0] : null,
         seeMoreNodes = data.allContentfulCases.nodes,
         { bigImage, thumbnail, services, title, imagesRow, section1Subtitle, section1Title, section1Content, section2Subtitle, section2Title, section2Content, section3Subtitle, section3Title, section3Content, section3Image } = caseItem;
-
-    console.log(seeMoreNodes);
 
     return (
         <Layout className="case-page-layout">
@@ -94,7 +93,11 @@ const CasePage = ({data}) => {
                     bigImage
                     ?   <ContainerLabelled className="case-page-big-image">
                             <div className="case-page-big-image__wrapper">
-                                <img src={bigImage.fixed.src} alt="asdasd"/>
+                                <Img
+                                    fluid={bigImage.fluid}
+                                    alt={bigImage.title}
+                                />
+                                {/*<img src={bigImage.fixed.src} alt="asdasd"/>*/}
                             </div>
                         </ContainerLabelled>
                     : null
@@ -191,6 +194,16 @@ export const query = graphql`
                 fixed(width: 1300) {
                     src
                 }
+                fluid(maxWidth: 1300) {
+                    base64
+                    sizes
+                    src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                    tracedSVG
+                }
+                title
             }
             section1Content {
                 childContentfulRichText {
@@ -207,6 +220,15 @@ export const query = graphql`
                     fixed(width: 600, height: 600) {
                         src
                     }
+                    fluid(maxWidth: 600) {
+                        base64
+                        sizes
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        tracedSVG
+                    }
                 }
                 caseCategories {
                     name
@@ -215,6 +237,7 @@ export const query = graphql`
             }
         }
     }
+
 `;
 
 export default CasePage;

@@ -43,6 +43,10 @@
 
       &__thumb {
 
+        .gatsby-image-wrapper {
+          padding-top: 70%;
+        }
+
         img {
           width: 100%;
           margin-bottom: 0;

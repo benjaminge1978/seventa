@@ -32,7 +32,7 @@ export default ({data, pageContext}) => {
                                         key={index}
                                         title={post.title}
                                         slug={post.slug}
-                                        thumb={post.thumbnail.fixed}
+                                        thumb={post.thumbnail}
                                         excerpt={post.excerpt}
                                         date={post.createdAt}
                                     />
@@ -61,10 +61,16 @@ export const query = graphql`
                 slug
                 createdAt(formatString: "DD.MM.YYYY")
                 thumbnail {
-                    fixed(width: 740, height: 580) {
-                        src
-                    }
                     title
+                    fluid(maxWidth: 600, quality: 50) {
+                        base64
+                        sizes
+                        src
+                        srcSet
+                        srcSetWebp
+                        srcWebp
+                        tracedSVG
+                    }
                 }
                 excerpt
             }

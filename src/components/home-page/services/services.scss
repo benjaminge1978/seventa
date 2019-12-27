@@ -41,6 +41,11 @@
         &__item {
             width: 20%;
 
+            .gatsby-image-wrapper {
+                padding-top: 100%;
+                margin-bottom: 1rem;
+            }
+
             a {
                 display: block;
             }

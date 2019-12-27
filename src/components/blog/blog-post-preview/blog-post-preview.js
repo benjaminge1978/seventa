@@ -1,13 +1,17 @@
 import React from "react";
 import PropsTypes from "prop-types";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 import Arrow from "../../../images/arrow-right.svg";
 
-const BlogPostPreview = ({title, excerpt, thumb, date, slug}) => {
+const BlogPostPreview = ({ title, excerpt, thumb, date, slug }) => {
     return (
         <div className="blog-post-preview">
             <Link to={`/blog/${slug}`} className="blog-post-preview__thumb">
-                <img src={thumb.src} alt={thumb.title} />
+                <Img
+                    fluid={thumb.fluid}
+                    alt={thumb.title}
+                />
             </Link>
             <p className="blog-post-preview__date">{date}</p>
             <h2 className="blog-post-preview__title">

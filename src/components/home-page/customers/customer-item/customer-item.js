@@ -1,21 +1,24 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
+import Img from "gatsby-image";
 
-// import './customer-item.scss'
-
-const CustomerItem = props => {
+const CustomerItem = ({ title, logoData, logo }) => {
     return (
         <div className="customer-item">
-            <figure>
-                <img src={props.logo} alt={props.title ? props.title : props.logo.split('/').pop().replace(/\W*/g, ' ')} />
-            </figure>
+            <Img
+                fixed={logo}
+                // fluid={logoData}
+                alt={title}
+                objectFit="contain"
+                objectPosition="0% 0%"
+            />
         </div>
     )
-}
+};
 
 CustomerItem.propTypes = {
-    logo: PropTypes.string.isRequired,
+    // logo: PropTypes.string.isRequired,
     title: PropTypes.string
-}
+};
 
 export default CustomerItem

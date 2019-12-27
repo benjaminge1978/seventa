@@ -112,6 +112,12 @@
     &__wrapper {
       position: relative;
       margin-bottom: 200px;
+      width: 100%;
+      max-width: 50%;
+
+      .gatsby-image-wrapper {
+        padding-top: 100%;
+      }
 
       img {
         margin: 0;
@@ -137,6 +143,19 @@
     .section-heading {
       padding-right: 150px;
       padding-left: 150px;
+    }
+  }
+}
+
+.section--see-more {
+
+  .related-cases {
+
+    .case-category__item {
+
+      .gatsby-image-wrapper {
+        padding-top: 100%;
+      }
     }
   }
 }

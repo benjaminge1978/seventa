@@ -37,7 +37,7 @@ export default ({data}) => {
                                     <div className="case-studies-category" key={index}>
                                         <CaseStudiesItem
                                             title={category.name}
-                                            thumbSrc={category.image.fixed.src}
+                                            thumb={category.image}
                                             excerpt={category.description.childContentfulRichText.html}
                                             slug={category.slug}
                                         />
@@ -59,10 +59,16 @@ export const query = graphql`
                 name
                 slug
                 image {
-                    fixed(width: 700, height: 540) {
-                        src
-                    }
                     title
+                    fluid(quality: 50, maxWidth: 700) {
+                        sizes
+                        base64
+                        src
+                        srcSet
+                        srcSetWebp
+                        srcWebp
+                        tracedSVG
+                    }
                 }
                 description {
                     childContentfulRichText {
