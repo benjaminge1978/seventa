@@ -1,20 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Seventa Events | Event Planning & Management Agency`,
+    description: `We organise events, and we do them well. We create memorable, rewarding and engaging experiences for our clients’ events. Find out more here.`,
     author: `@gatsbyjs`,
     contactEmail: `info@seventa.co.uk`,
-    contactPhone: `1202 237 433`,
-    offices: [
-      {
-        location: `Bournemouth`,
-        addresse: ['Seventa Events, 543 Wallisdown Rd,', 'Bournemouth, BH12 5AD'],
-      },
-      {
-        location: `London`,
-        addresse: ['The Dock, Tobacco Quay,', 'Wapping Lane, London, E1W 2SF'],
-      },
-    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PageHeading from "../components/page-heading/page-heading";
@@ -14,25 +14,8 @@ import Image2 from "../components/about-page/image-2";
 
 import "./scss/about.scss";
 
-export default () => {
-    const membersData = useStaticQuery(graphql`
-        query Members {
-            allContentfulTeamMember {
-                nodes {
-                    name
-                    photo {
-                        title
-                        fixed(width: 400, height: 400) {
-                            src
-                        }
-                    }
-                    position
-                }
-            }
-        }
-    `);
-
-    const members = membersData.allContentfulTeamMember.nodes;
+export default ({ data }) => {
+    const members = data.allContentfulTeamMember.nodes;
 
     return (
         <Layout className="about-page-layout">
@@ -40,7 +23,7 @@ export default () => {
             <PageHeading
                 pageName="About us"
                 pageTitle="We are the team that does something"
-                description="At Seventa we take pride in knowing our customers. Completely leverage existing real-time information. Dramatically orchestrate web-enabled mosql."
+                description="At Seventa we take pride in knowing our customers. Completely leverage existing real-time information. Dramatically orchestrate web-enabled mosql. Monotonectally utilize"
             />
             <ContainerLabelled label={<Arrow />} className="about-page-promo" innerClassName="about-page-promo__inner" labelClassName="about-page-promo__label">
                 <PromoImage />
@@ -81,7 +64,7 @@ export default () => {
                                             <TeamMember
                                                 name={member.name}
                                                 position={member.position}
-                                                photo={member.photo.fixed}
+                                                photo={member.photo.fluid}
                                             />
                                         </div>
                                     ))
@@ -94,3 +77,24 @@ export default () => {
         </Layout>
     );
 }
+
+export const query = graphql`
+    query Members {
+        allContentfulTeamMember {
+            nodes {
+                name
+                photo {
+                    title
+                    fluid(maxWidth: 400, quality: 75) {
+                        base64
+                        src
+                        srcSet
+                        srcSetWebp
+                        srcWebp
+                    }
+                }
+                position
+            }
+        }
+    }
+`;

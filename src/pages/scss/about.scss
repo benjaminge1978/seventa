@@ -53,6 +53,13 @@
 
 .about-page {
 
+  .page-heading {
+
+    &__description {
+      max-width: 815px;
+    }
+  }
+
   &-text {
 
     &--grey {
@@ -95,8 +102,16 @@
     display: flex;
     background: linear-gradient( to bottom, #99b1b1 0%, #99b1b1 50%, #efefef 50%, #efefef 100%);
 
-    img {
-      margin-bottom: 0;
+    &__item {
+      width: 40%;
+
+      .gatsby-image-wrapper {
+        padding-top: 100%;
+      }
+
+      img {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -122,6 +137,8 @@
 
       img {
         margin-left: auto;
+        width: 100%;
+        height: auto;
       }
     }
   }

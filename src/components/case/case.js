@@ -11,13 +11,13 @@ import Arrow from "../../images/case-study-arrow.svg";
 import "./case.scss";
 
 export default class Case extends React.Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
         // this.controller = new ScrollMagic.Controller();
         // this.imgRef = React.createRef();
         // this.triggerElement = React.createRef();
-    }
+    // }
 
     componentDidMount() {
         // new ScrollMagic.Scene({

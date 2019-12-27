@@ -648,9 +648,9 @@ a {
   opacity: 1;
 }
 
-html {
-  padding-top: 118px;
-}
+/*html {*/
+/*  padding-top: 118px;*/
+/*}*/
 
 a.animated-link {
   position: relative;

@@ -1,21 +1,22 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
-import Header from './header/header'
-import Footer from "./footer/footer"
+import Header from "./header/header";
+import Footer from "./footer/footer";
 
-import './_main.scss'
+import "./_main.scss";
 import "./layout.css"
 
-const Layout = (props) => {
-    const className = 'page-content' + ( 'undefined' !== typeof props.className ? ` ${props.className}` : '');
-        return (
-        <div className={className}>
+const Layout = ({ className, children }) => {
+    const LayoutClassName = 'page-content' + ( 'undefined' !== typeof className ? ` ${className}` : '');
+
+    return (
+        <div className={LayoutClassName}>
             <Header />
-            <main>{props.children}</main>
+            <main>{children}</main>
             <Footer />
         </div>
-      )
+    );
 };
 
 Layout.propTypes = {

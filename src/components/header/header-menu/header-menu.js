@@ -25,10 +25,10 @@ export default class extends React.Component {
             this.menu.current,
             0.5,
             {
-                x: "100%",
+                x: "0",
             },
             {
-                x: "0%",
+                x: "-100%",
                 ease: Power3.easeIn,
             },
         );

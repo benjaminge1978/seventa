@@ -1,4 +1,5 @@
 import React from "react";
+import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 
 export default () => {
@@ -6,10 +7,16 @@ export default () => {
         query Image2 {
             file(relativePath: {eq: "simon-seventa-paint-fight.jpeg"}) {
                 childImageSharp {
-                    fixed(width: 800, height: 800) {
+                    fluid(webpQuality: 80, jpegQuality: 80, fit: CONTAIN, maxWidth: 800) {
+                        base64
+                        sizes
+                        srcSet
+                        srcSetWebp
+                        srcWebp
                         src
                     }
                 }
+                name
             }
         }
     `);
@@ -19,6 +26,6 @@ export default () => {
     }
 
     return (
-        <img src={imageQuery.file.childImageSharp.fixed.src} alt="alt text 2" />
+        <Img fluid={imageQuery.file.childImageSharp.fluid} alt={imageQuery.file.name} />
     );
 };

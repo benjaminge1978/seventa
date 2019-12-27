@@ -11,6 +11,10 @@
     width: 100%;
     height: auto;
     margin-bottom: 2rem;
+
+    .gatsby-image-wrapper {
+      padding-top: 100%;
+    }
   }
 
   &__position {

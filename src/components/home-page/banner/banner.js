@@ -1,5 +1,5 @@
 import React from "react";
-import {gsap, Power3, TimelineMax} from "gsap";
+import {gsap, TimelineMax} from "gsap";
 import SplitText from "gsap/SplitText";
 import Video from "./video/video";
 import Arrow from "../../../images/arrow-down.svg"

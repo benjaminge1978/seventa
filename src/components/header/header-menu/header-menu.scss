@@ -93,7 +93,7 @@ ul#header-menu {
 .mobile-menu-wrapper {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 100%;
     width: 100vw;
     height: 100vh;
     background-color: #d3d3d3;
@@ -202,7 +202,7 @@ ul#header-menu {
 
     .mobile-menu-wrapper {
         display: grid;
-        right: 100%;
+        //right: 100%;
     }
 
     .menu-wrapper  {
