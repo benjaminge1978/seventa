@@ -22,7 +22,7 @@ export default ({ data }) => {
             <SEO title="About us"/>
             <PageHeading
                 pageName="About us"
-                pageTitle="We are the team that does something"
+                pageTitle="We are the awesome team that does something"
                 description="At Seventa we take pride in knowing our customers. Completely leverage existing real-time information. Dramatically orchestrate web-enabled mosql. Monotonectally utilize"
             />
             <ContainerLabelled label={<Arrow />} className="about-page-promo" innerClassName="about-page-promo__inner" labelClassName="about-page-promo__label">
