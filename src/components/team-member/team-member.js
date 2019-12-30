@@ -13,7 +13,6 @@ const TeamMember = ({ photo, name, position }) => (
                 objectPosition="50% 50%"
             />
         </div>
-        {/*<img className="team-member__photo" src={photo.src} alt={photo.title} />*/}
         <h3 className="team-member__name">{name}</h3>
         <p className="team-member__position">{position}</p>
     </div>

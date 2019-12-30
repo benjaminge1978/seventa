@@ -1,6 +1,6 @@
 import React from "react";
+import Helmet from "react-helmet";
 import PropTypes from "prop-types";
-
 import Header from "./header/header";
 import Footer from "./footer/footer";
 
@@ -12,6 +12,9 @@ const Layout = ({ className, children }) => {
 
     return (
         <div className={LayoutClassName}>
+            <Helmet>
+                <link rel="preload" as="style" href="//use.typekit.net/xad6ytx.css"/>
+            </Helmet>
             <Header />
             <main>{children}</main>
             <Footer />

@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-
 import Arrow from "../../../images/arrow-left.svg";
 import CaseItem from "../../case-category/case-item/case-item";
 
@@ -33,7 +32,7 @@ const SeeMore = ({cases, catName}) => {
 SeeMore.propTypes = {
     cases: PropTypes.arrayOf(PropTypes.shape({
         thumbnail: PropTypes.shape({
-            fixed: PropTypes.shape({
+            fluid: PropTypes.shape({
                 src: PropTypes.string.isRequired,
             }).isRequired,
         }).isRequired,

@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PageHeading from "../components/page-heading/page-heading";
@@ -11,7 +12,7 @@ import ContactForm from "../components/contact/form/form";
 import "./scss/contact.scss";
 
 export default ({ data }) => {
-    const { name, publicURL } = data.file;
+    const { childImageSharp, name } = data.file;
 
     return (
         <Layout className="contact-page">
@@ -24,10 +25,10 @@ export default ({ data }) => {
             />
             <ContainerLabelled
                 className="contact-page-darkgrey"
-                label={<Arrow />}
+                label={<Arrow aria-hidden={true} />}
             >
                 <figure>
-                    <img src={publicURL} alt={name} />
+                    <Img fluid={childImageSharp.fluid} alt={name} />
                 </figure>
                 <div className="contact-data">
                     <h3><a href="mailto:info@seventa.co.uk">E: info@seventa.co.uk</a></h3>
@@ -48,6 +49,15 @@ export const query = graphql`
         file(relativePath: {eq: "seventa-about-us-header-image.jpg"}) {
             publicURL
             name
+            childImageSharp {
+                fluid {
+                    sizes
+                    src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                }
+            }
         }
     }
 `;

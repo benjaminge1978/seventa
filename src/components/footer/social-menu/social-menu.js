@@ -10,20 +10,25 @@ library.add(fab);
 
 export default () => {
     const socialLinks = [
-        {link: 'https://www.facebook.com/SeventaEvents/', icon: 'facebook-f'},
-        {link: 'https://www.instagram.com/seventaevents/', icon: 'instagram'},
-        {link: 'https://linkedin.com/company/seventa-events/', icon: 'linkedin-in'},
-        {link: 'https://twitter.com/SeventaEvents', icon: 'twitter'},
+        {link: 'https://www.facebook.com/SeventaEvents/', icon: 'facebook-f', label: "Facebook link"},
+        {link: 'https://www.instagram.com/seventaevents/', icon: 'instagram', label: "Instagram link"},
+        {link: 'https://linkedin.com/company/seventa-events/', icon: 'linkedin-in', label: "Linkedin link"},
+        {link: 'https://twitter.com/SeventaEvents', icon: 'twitter', label: "Twitter link"},
     ];
 
     return (
         <ul className="social-links__menu">
         {
             socialLinks.map((item, index) => {
+                const { link, icon, label } = item;
             return (
                     <li key={index}>
-                        <a href={item.link} className="social-link">
-                            <FontAwesomeIcon icon={['fab', item.icon]}/>
+                        <a
+                            href={link}
+                            className="social-link"
+                            aria-label={label}
+                        >
+                            <FontAwesomeIcon icon={['fab', icon]}/>
                         </a>
                     </li>
                 )

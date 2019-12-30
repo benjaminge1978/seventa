@@ -38,9 +38,9 @@ const CasePage = ({data}) => {
                     }
                 </PageHeading>
                 {
-                    'undefined' !== typeof thumbnail.fixed.src
+                    'undefined' !== typeof thumbnail.fluid
                     ?   <ContainerLabelled label={<Arrow />} className="case-page-thumbnail">
-                            <img src={thumbnail.fixed.src} alt={title} />
+                            <Img fluid={thumbnail.fluid} alt={thumbnail.title} />
                         </ContainerLabelled>
                     : null
                 }
@@ -66,7 +66,7 @@ const CasePage = ({data}) => {
                             {
                                 imagesRow.map((image, index) => (
                                     <div key={index} className="case-page-images-row__item">
-                                        <img src={image.fixed.src} alt="dfdf"/>
+                                        <Img fluid={image.fluid} alt={image.title} />
                                     </div>
                                 ))
                             }
@@ -97,7 +97,6 @@ const CasePage = ({data}) => {
                                     fluid={bigImage.fluid}
                                     alt={bigImage.title}
                                 />
-                                {/*<img src={bigImage.fixed.src} alt="asdasd"/>*/}
                             </div>
                         </ContainerLabelled>
                     : null
@@ -107,7 +106,7 @@ const CasePage = ({data}) => {
                     section3Subtitle && section3Title && section3Content && section3Image
                     ?   <div className="case-page-text-3">
                             <div className="case-page-text-3__image">
-                                <img src={section3Image.fixed.src} alt="asdasda"/>
+                                <Img fluid={section3Image.fluid} alt={section3Image.title} />
                             </div>
                             <div className="case-page-text-3__content">
                                 <SectionHeading
@@ -140,15 +139,42 @@ const CasePage = ({data}) => {
 
 export const query = graphql`
     query CaseQuery($id: String, $categoryID: String) {
+        allContentfulCases(filter: {caseCategories: {elemMatch: {id: {eq: $categoryID}}}, id: {ne: $id}}, limit: 3) {
+            nodes {
+                slug
+                title
+                thumbnail {
+                    fluid(maxWidth: 600) {
+                        base64
+                        sizes
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        tracedSVG
+                    }
+                    title
+                }
+                caseCategories {
+                    name
+                    slug
+                }
+            }
+        }
         contentfulCases(id: {eq: $id}) {
             title
             thumbnail {
                 fixed(width: 1600, height: 850) {
                     src
                 }
-                fluid(maxWidth: 1600, maxHeight: 860) {
+                fluid(maxWidth: 1600, maxHeight: 860, quality: 80) {
                     srcSet
                     src
+                    srcSetWebp
+                    srcWebp
+                    tracedSVG
+                    sizes
+                    base64
                 }
             }
             caseCategories {
@@ -157,18 +183,20 @@ export const query = graphql`
                 name
             }
             thumb_excerpt
-            content {
-                childContentfulRichText {
-                    html
-                }
-            }
             services {
                 services
             }
             imagesRow {
-                fixed(width: 570, height: 570) {
+                fluid(quality: 80, maxWidth: 600) {
+                    base64
+                    sizes
                     src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                    tracedSVG
                 }
+                title
             }
             section1Title
             section2Subtitle
@@ -189,12 +217,19 @@ export const query = graphql`
                 fixed(width: 680, height: 730) {
                     src
                 }
+                fluid(maxWidth: 680,quality: 80) {
+                    base64
+                    sizes
+                    src
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                    tracedSVG
+                }
+                title
             }
             bigImage {
-                fixed(width: 1300) {
-                    src
-                }
-                fluid(maxWidth: 1300) {
+                fluid(maxWidth: 1300, quality: 80) {
                     base64
                     sizes
                     src
@@ -211,33 +246,13 @@ export const query = graphql`
                 }
             }
             section1Subtitle
-        }
-        allContentfulCases(filter: {caseCategories: {elemMatch: {id: {eq: $categoryID}}}, id: {ne: $id}}, limit: 3) {
-            nodes {
-                slug
-                title
-                thumbnail {
-                    fixed(width: 600, height: 600) {
-                        src
-                    }
-                    fluid(maxWidth: 600) {
-                        base64
-                        sizes
-                        src
-                        srcSet
-                        srcWebp
-                        srcSetWebp
-                        tracedSVG
-                    }
-                }
-                caseCategories {
-                    name
-                    slug
+            content {
+                childContentfulRichText {
+                    html
                 }
             }
         }
     }
-
 `;
 
 export default CasePage;

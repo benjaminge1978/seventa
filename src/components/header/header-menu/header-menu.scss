@@ -48,6 +48,7 @@ ul#header-menu {
             opacity: 0;
             transition: .3s ease;
             filter:alpha(opacity=0);
+            z-index: 999;
 
             li {
                 padding: 0 25px;
@@ -141,6 +142,8 @@ ul#header-menu {
     display: none;
     z-index: 10;
     transform: translateY(10px);
+    background-color: transparent;
+    border: none;
 
     &:focus {
         outline: none;
@@ -156,7 +159,7 @@ ul#header-menu {
 
 .hamburger-menu {
     position: relative;
-    transform: translateY(25px);
+    //transform: translateY(25px);
     background: #313131;
     transition: all 0ms 300ms;
     z-index: 1000001;

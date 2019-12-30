@@ -103,9 +103,9 @@ export default class extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div className="menu-wrapper" onClick={this.toggleMobileMenu} onKeyDown={this.toggleMobileMenu} role="button" tabIndex={0}>
+                <button className="menu-wrapper" onClick={this.toggleMobileMenu} onKeyDown={this.toggleMobileMenu} name="menu-toggle" tabIndex={0} aria-label="Toggle mobile menu">
                     <div id="toggle" className="hamburger-menu" ref={this.toggleButton} />
-                </div>
+                </button>
             </div>
         )
     }

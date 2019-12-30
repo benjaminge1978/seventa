@@ -38,16 +38,14 @@ export const query = graphql`
                     name
                     cases {
                         thumbnail {
-                            fixed {
-                                src
-                            }
                             fluid(quality: 80) {
                                 base64
-                                aspectRatio
                                 src
                                 srcSet
                                 srcSetWebp
                                 srcWebp
+                                sizes
+                                aspectRatio
                             }
                         }
                         id

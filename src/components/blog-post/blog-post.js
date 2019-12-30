@@ -72,7 +72,6 @@ export const query = graphql`
                     srcSet
                     srcSetWebp
                     srcWebp
-                    tracedSVG
                 }
                 title
             }

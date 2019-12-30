@@ -32,7 +32,7 @@ const Pagination = ({maxPages, current}) => {
             {
                 current === 1
                     ? null
-                    :   <Link className="pagination__arrow" to={current > 2 ? `/blog/${current - 1}` : `blog`}>
+                    :   <Link className="pagination__arrow" to={current > 2 ? `/blog/${current - 1}` : `blog`} aria-label="Previous page">
                             <FontAwesomeIcon icon={faChevronLeft} />
                         </Link>
             }
@@ -46,6 +46,7 @@ const Pagination = ({maxPages, current}) => {
                                 ?   <Link
                                         to={1 === linkText ? `/blog` : `/blog/${linkText}`}
                                         className={'pagination__link' + (linkText === current ? ' pagination__link--current' : '')}
+                                        aria-label={`Pagination page ${linkText}`}
                                     >
                                         {linkText}
                                     </Link>
@@ -59,7 +60,7 @@ const Pagination = ({maxPages, current}) => {
             {
                 current === maxPages
                     ? null
-                    :   <Link className="pagination__arrow" to={`/blog/${current + 1}`}>
+                    :   <Link className="pagination__arrow" to={`/blog/${current + 1}`} aria-label="Next page">
                             <FontAwesomeIcon icon={faChevronRight} />
                         </Link>
             }
