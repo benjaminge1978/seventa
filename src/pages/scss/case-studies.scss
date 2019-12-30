@@ -49,7 +49,9 @@
               &__thumb {
 
                 .gatsby-image-wrapper {
-                  padding-top: 70%;
+                  //padding-top: 70%;
+                  height: 515px;
+                  max-height: 515px;
                   margin-bottom: 1rem;
                 }
 

@@ -7,24 +7,26 @@ import "./customers.scss";
 
 export default () => {
     const customers = useStaticQuery(graphql`
-        query {
+        {
             allContentfulCustomers {
                 nodes {
                     logo {
                         title
-                        fluid(quality: 80, maxHeight: 80) {
+                        fluid(quality: 80) {
                             base64
                             sizes
                             src
                             srcSet
                             srcSetWebp
                             srcWebp
+                            aspectRatio
                             tracedSVG
                         }
                     }
                 }
             }
         }
+
     `);
 
     if (!customers.allContentfulCustomers.nodes.length) {

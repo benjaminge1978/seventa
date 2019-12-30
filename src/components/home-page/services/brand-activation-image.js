@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 
 export default () => {
     const image = useStaticQuery(graphql`
-        {
+        query BrandActivationImage {
             file(relativePath: {eq: "services/brand-activation.jpg"}) {
                 childImageSharp {
                     fluid(quality: 85) {
@@ -13,8 +13,14 @@ export default () => {
                         srcWebp
                         src
                         base64
+                        sizes
+                        tracedSVG
+                        presentationHeight
+                        presentationWidth
+                        aspectRatio
+                        originalImg
+                        originalName
                     }
-
                 }
                 name
             }

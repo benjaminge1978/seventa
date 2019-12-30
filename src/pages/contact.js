@@ -50,14 +50,22 @@ export const query = graphql`
             publicURL
             name
             childImageSharp {
-                fluid {
+                fluid(quality: 80) {
                     sizes
                     src
                     srcSet
                     srcSetWebp
                     srcWebp
+                    tracedSVG
+                    presentationWidth
+                    presentationHeight
+                    originalName
+                    originalImg
+                    base64
+                    aspectRatio
                 }
             }
         }
     }
+
 `;

@@ -7,20 +7,25 @@ import Footer from "./footer/footer";
 import "./_main.scss";
 import "./layout.css"
 
-const Layout = ({ className, children }) => {
-    const LayoutClassName = 'page-content' + ( 'undefined' !== typeof className ? ` ${className}` : '');
+class Layout extends React.Component {
+    render() {
+        const { className, children } = this.props,
+            LayoutClassName = 'page-content' + ( 'undefined' !== typeof className ? ` ${className}` : '');
 
-    return (
-        <div className={LayoutClassName}>
-            <Helmet>
-                <link rel="stylesheet" href="//use.typekit.net/xad6ytx.css" />
-            </Helmet>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-        </div>
-    );
-};
+        return (
+            <React.Fragment>
+                <Helmet>
+                    <link rel="stylesheet" href="//use.typekit.net/xad6ytx.css" />
+                </Helmet>
+                <div className={LayoutClassName}>
+                    <Header />
+                    <main>{children}</main>
+                    <Footer />
+                </div>
+            </React.Fragment>
+        );
+    }
+}
 
 Layout.propTypes = {
     children: PropTypes.node.isRequired,

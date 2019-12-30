@@ -13,6 +13,13 @@ export default () => {
                         srcWebp
                         src
                         base64
+                        sizes
+                        tracedSVG
+                        presentationHeight
+                        presentationWidth
+                        aspectRatio
+                        originalImg
+                        originalName
                     }
 
                 }

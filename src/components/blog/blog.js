@@ -69,6 +69,8 @@ export const query = graphql`
                         srcSet
                         srcSetWebp
                         srcWebp
+                        aspectRatio
+                        tracedSVG
                     }
                 }
                 excerpt
