@@ -13,7 +13,7 @@ const Layout = ({ className, children }) => {
     return (
         <div className={LayoutClassName}>
             <Helmet>
-                <link rel="preload" as="style" href="//use.typekit.net/xad6ytx.css"/>
+                <link rel="stylesheet" href="//use.typekit.net/xad6ytx.css" />
             </Helmet>
             <Header />
             <main>{children}</main>

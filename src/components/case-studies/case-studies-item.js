@@ -13,6 +13,7 @@ const CaseStudiesItem = ({ title, thumbSrc, slug, excerpt, thumb }) => {
                 <Img
                     fluid={thumb.fluid}
                     alt={thumb.title}
+                    loading="eager"
                 />
             </Link>
             <h2 className="case-studies-list-item__title"><Link to={itemLink} className="animated-link">{title}</Link></h2>

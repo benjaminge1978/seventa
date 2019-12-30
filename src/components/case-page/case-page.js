@@ -40,7 +40,7 @@ const CasePage = ({data}) => {
                 {
                     'undefined' !== typeof thumbnail.fluid
                     ?   <ContainerLabelled label={<Arrow />} className="case-page-thumbnail">
-                            <Img fluid={thumbnail.fluid} alt={thumbnail.title} />
+                            <Img fluid={thumbnail.fluid} alt={thumbnail.title} loading="eager" />
                         </ContainerLabelled>
                     : null
                 }
@@ -66,7 +66,7 @@ const CasePage = ({data}) => {
                             {
                                 imagesRow.map((image, index) => (
                                     <div key={index} className="case-page-images-row__item">
-                                        <Img fluid={image.fluid} alt={image.title} />
+                                        <Img fluid={image.fluid} alt={image.title} loading="eager" />
                                     </div>
                                 ))
                             }
@@ -106,7 +106,7 @@ const CasePage = ({data}) => {
                     section3Subtitle && section3Title && section3Content && section3Image
                     ?   <div className="case-page-text-3">
                             <div className="case-page-text-3__image">
-                                <Img fluid={section3Image.fluid} alt={section3Image.title} />
+                                <Img fluid={section3Image.fluid} alt={section3Image.title} loading="eager" />
                             </div>
                             <div className="case-page-text-3__content">
                                 <SectionHeading
@@ -151,7 +151,6 @@ export const query = graphql`
                         srcSet
                         srcWebp
                         srcSetWebp
-                        tracedSVG
                     }
                     title
                 }
@@ -164,15 +163,11 @@ export const query = graphql`
         contentfulCases(id: {eq: $id}) {
             title
             thumbnail {
-                fixed(width: 1600, height: 850) {
-                    src
-                }
-                fluid(maxWidth: 1600, maxHeight: 860, quality: 80) {
+                fluid(maxWidth: 1600, quality: 80) {
                     srcSet
                     src
                     srcSetWebp
                     srcWebp
-                    tracedSVG
                     sizes
                     base64
                 }
@@ -194,7 +189,6 @@ export const query = graphql`
                     srcSet
                     srcSetWebp
                     srcWebp
-                    tracedSVG
                 }
                 title
             }
@@ -214,9 +208,6 @@ export const query = graphql`
                 }
             }
             section3Image {
-                fixed(width: 680, height: 730) {
-                    src
-                }
                 fluid(maxWidth: 680,quality: 80) {
                     base64
                     sizes
@@ -224,7 +215,6 @@ export const query = graphql`
                     srcSet
                     srcSetWebp
                     srcWebp
-                    tracedSVG
                 }
                 title
             }
@@ -236,7 +226,6 @@ export const query = graphql`
                     srcSet
                     srcSetWebp
                     srcWebp
-                    tracedSVG
                 }
                 title
             }

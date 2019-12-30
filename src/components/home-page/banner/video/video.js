@@ -23,7 +23,13 @@ export default class extends React.Component {
     }
 
     changeIframeAspectRatio() {
-        const { offsetHeight, offsetWidth } = document.getElementById('banner-section-video'),
+        const bannerVideo = document.getElementById('banner-section-video');
+
+        if ( ! bannerVideo ) {
+            return;
+        }
+
+        const { offsetHeight, offsetWidth } = bannerVideo,
             { iframeWidth, iframeHeight } = this.state,
             scaleV = offsetHeight / iframeHeight,
             scaleH = offsetWidth / iframeWidth,

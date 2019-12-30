@@ -25,6 +25,6 @@ export default () => {
     }
 
     return (
-        <Img fluid={promoImageQuery.file.childImageSharp.fluid} alt="Promo" />
+        <Img fluid={promoImageQuery.file.childImageSharp.fluid} alt="Promo" loading="eager"/>
     );
 };
