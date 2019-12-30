@@ -12,7 +12,7 @@ const CaseItem = ({ slug, categories, caseTitle, thumbnail }) => (
             <Img
                 fluid={thumbnail.fluid}
                 alt={thumbnail.title}
-                loading="eager"
+                loading="lazy"
             />
         </Link>
         <div className="case-category-item-desc">

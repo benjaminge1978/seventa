@@ -15,7 +15,7 @@ export default class Case extends React.Component {
         return (
             <div className={`cases-item cases-item--${itemClasses} cases-item--${index + 1}`} ref={this.triggerElement}>
                         <Link to={caseSlug} className="cases-item__thumb">
-                            <Img fluid={fluidImg.fluid} alt={fluidImg.title} loading="eager"/>
+                            <Img fluid={fluidImg.fluid} alt={fluidImg.title} loading="lazy"/>
                             {
                                 thumbDesc
                                     ? <span className="cases-item__description">{thumbDesc}</span>

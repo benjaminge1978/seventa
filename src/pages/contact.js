@@ -28,7 +28,7 @@ export default ({ data }) => {
                 label={<Arrow aria-hidden={true} />}
             >
                 <figure>
-                    <Img fluid={childImageSharp.fluid} alt={name} loading="eager" />
+                    <Img fluid={childImageSharp.fluid} alt={name} loading="lazy" />
                 </figure>
                 <div className="contact-data">
                     <h3><a href="mailto:info@seventa.co.uk">E: info@seventa.co.uk</a></h3>

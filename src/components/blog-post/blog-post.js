@@ -34,7 +34,7 @@ export default ({data, pageContext}) => {
                 <Img
                     fluid={thumbnail.fluid}
                     alt={thumbnail.title}
-                    loading="eager"
+                    loading="lazy"
                 />
             </ContainerLabelled>
             <div className="blog-post-single__content" dangerouslySetInnerHTML={{

@@ -40,7 +40,7 @@ const CasePage = ({data}) => {
                 {
                     'undefined' !== typeof thumbnail.fluid
                     ?   <ContainerLabelled label={<Arrow />} className="case-page-thumbnail">
-                            <Img fluid={thumbnail.fluid} alt={thumbnail.title} loading="eager" />
+                            <Img fluid={thumbnail.fluid} alt={thumbnail.title} loading="lazy" />
                         </ContainerLabelled>
                     : null
                 }
@@ -66,7 +66,7 @@ const CasePage = ({data}) => {
                             {
                                 imagesRow.map((image, index) => (
                                     <div key={index} className="case-page-images-row__item">
-                                        <Img fluid={image.fluid} alt={image.title} loading="eager" />
+                                        <Img fluid={image.fluid} alt={image.title} loading="lazy" />
                                     </div>
                                 ))
                             }
@@ -106,7 +106,7 @@ const CasePage = ({data}) => {
                     section3Subtitle && section3Title && section3Content && section3Image
                     ?   <div className="case-page-text-3">
                             <div className="case-page-text-3__image">
-                                <Img fluid={section3Image.fluid} alt={section3Image.title} loading="eager" />
+                                <Img fluid={section3Image.fluid} alt={section3Image.title} loading="lazy" />
                             </div>
                             <div className="case-page-text-3__content">
                                 <SectionHeading
