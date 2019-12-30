@@ -1,7 +1,7 @@
 import React from "react";
 import {gsap, TimelineMax} from "gsap";
 import SplitText from "gsap/SplitText";
-import Video from "./video/video";
+
 import Arrow from "../../../images/arrow-down.svg"
 import AnimatedLogo from "./animated-logo/animated-logo";
 
@@ -17,7 +17,7 @@ export default () => (
                 <span>We love experiences.</span>
                 <span>We create them.</span>
             </h2>
-            <Video />
+           
             <AnimatedLogo />
         </div>
     </div>
