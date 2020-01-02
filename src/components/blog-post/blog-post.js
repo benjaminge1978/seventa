@@ -35,6 +35,7 @@ export default ({data, pageContext}) => {
                     fluid={thumbnail.fluid}
                     alt={thumbnail.title}
                     loading="lazy"
+                    className="animated-img"
                 />
             </ContainerLabelled>
             <div className="blog-post-single__content" dangerouslySetInnerHTML={{

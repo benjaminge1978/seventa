@@ -6,7 +6,7 @@ import ContainerLabelled from "../components/container-labelled/container-labell
 import AnimatedLogo from "../components/home-page/animated-logo/animated-logo";
 import Banner from "../components/home-page/banner/banner";
 import Promo from "../components/home-page/promo/promo";
-import Cases from '../components/home-page/cases/cases';
+import CasesUpdated from "../components/home-page/cases-updated/cases-updated";
 import Customers from "../components/home-page/customers/customers";
 import Services from '../components/home-page/services/services';
 
@@ -17,8 +17,8 @@ const IndexPage = ({ data }) => {
             <AnimatedLogo />
             <Banner />
             <Promo />
-            <ContainerLabelled className="cases-section" label={<span className="section-label">Cases ——</span>}>
-                <Cases data={data}/>
+            <ContainerLabelled className="cases-updated-section" label={<span className="section-label">Cases ——</span>}>
+                <CasesUpdated data={data}/>
             </ContainerLabelled>
             <Services />
             <ContainerLabelled className="customers-section" label={<span className="section-label">Customers ——</span>}>
@@ -54,6 +54,30 @@ export const query = graphql`
                         title
                         thumb_excerpt
                         slug
+                    }
+                }
+            }
+        }
+        allContentfulHomepageCaseStudy(sort: {fields: createdAt, order: ASC}) {
+            edges {
+                node {
+                    slug
+                    title
+                    category {
+                        name
+                        slug
+                    }
+                    image {
+                        fluid {
+                            tracedSVG
+                            srcWebp
+                            srcSetWebp
+                            srcSet
+                            src
+                            sizes
+                            base64
+                            aspectRatio
+                        }
                     }
                 }
             }

@@ -27,5 +27,5 @@ export default () => {
         }
     `);
 
-    return <Img fluid={image.file.childImageSharp.fluid} alt={image.file.name} />
+    return <Img fluid={image.file.childImageSharp.fluid} alt={image.file.name} className="animated-img" />
 }

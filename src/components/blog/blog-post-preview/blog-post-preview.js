@@ -12,6 +12,7 @@ const BlogPostPreview = ({ title, excerpt, thumb, date, slug }) => {
                     fluid={thumb.fluid}
                     alt={thumb.title}
                     loading="lazy"
+                    className="animated-img"
                 />
             </Link>
             <p className="blog-post-preview__date">{date}</p>

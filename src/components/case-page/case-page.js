@@ -40,7 +40,7 @@ const CasePage = ({data}) => {
                 {
                     'undefined' !== typeof thumbnail.fluid
                         ?   <ContainerLabelled label={<Link to={category.slug}><Arrow /></Link>} className="case-page-thumbnail">
-                            <Img fluid={thumbnail.fluid} alt={thumbnail.title} loading="lazy" />
+                            <Img fluid={thumbnail.fluid} alt={thumbnail.title} loading="lazy" className="animated-img" />
                         </ContainerLabelled>
                     : null
                 }
@@ -66,7 +66,7 @@ const CasePage = ({data}) => {
                             {
                                 imagesRow.map((image, index) => (
                                     <div key={index} className="case-page-images-row__item">
-                                        <Img fluid={image.fluid} alt={image.title} loading="lazy" />
+                                        <Img fluid={image.fluid} alt={image.title} loading="lazy" className="animated-img" />
                                     </div>
                                 ))
                             }
@@ -96,6 +96,7 @@ const CasePage = ({data}) => {
                                 <Img
                                     fluid={bigImage.fluid}
                                     alt={bigImage.title}
+                                    className="animated-img"
                                 />
                             </div>
                         </ContainerLabelled>
@@ -106,7 +107,7 @@ const CasePage = ({data}) => {
                     section3Subtitle && section3Title && section3Content && section3Image
                     ?   <div className="case-page-text-3">
                             <div className="case-page-text-3__image">
-                                <Img fluid={section3Image.fluid} alt={section3Image.title} loading="lazy" />
+                                <Img fluid={section3Image.fluid} alt={section3Image.title} loading="lazy" className="animated-img" />
                             </div>
                             <div className="case-page-text-3__content">
                                 <SectionHeading

@@ -12,6 +12,7 @@ const TeamMember = ({ photo, name, position }) => (
                 objectFit="cover"
                 objectPosition="50% 50%"
                 loading="lazy"
+                className="animated-img"
             />
         </div>
         <h3 className="team-member__name">{name}</h3>

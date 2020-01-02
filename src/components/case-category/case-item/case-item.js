@@ -13,6 +13,7 @@ const CaseItem = ({ slug, categories, caseTitle, thumbnail }) => (
                 fluid={thumbnail.fluid}
                 alt={thumbnail.title}
                 loading="lazy"
+                className="animated-img"
             />
         </Link>
         <div className="case-category-item-desc">

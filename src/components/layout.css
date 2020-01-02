@@ -642,6 +642,18 @@ a {
   }
 }
 
+.animated-img {
+  overflow: hidden;
+}
+
+.animated-img img {
+  transition: all ease .5s!important;
+}
+
+.animated-img:hover img {
+  transform: scale(1.1);
+}
+
 ::-ms-input-placeholder, :-ms-input-placeholder, ::placeholder {
   color: #313131;
   opacity: 1;
