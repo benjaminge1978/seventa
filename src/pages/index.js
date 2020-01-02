@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import ContainerLabelled from "../components/container-labelled/container-labelled";
+import AnimatedLogo from "../components/home-page/animated-logo/animated-logo";
 import Banner from "../components/home-page/banner/banner";
 import Promo from "../components/home-page/promo/promo";
 import Cases from '../components/home-page/cases/cases';
@@ -13,6 +14,7 @@ const IndexPage = ({ data }) => {
     return (
         <Layout>
             <SEO title="Home" />
+            <AnimatedLogo />
             <Banner />
             <Promo />
             <ContainerLabelled className="cases-section" label={<span className="section-label">Cases ——</span>}>

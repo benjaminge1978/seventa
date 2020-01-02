@@ -1,4 +1,4 @@
-/*@import url('https://use.typekit.net/xad6ytx.css');*/
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
 
 * {
   margin: 0;
@@ -11,7 +11,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  font-family: "europa",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: "Lexend Deca", "europa",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -209,7 +209,6 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: europa, georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -633,7 +632,7 @@ a {
 
 @media only screen and (min-width: 576px) {
   p {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 

@@ -8,12 +8,18 @@ export default () => {
             file(relativePath: {eq: "seventa-about-painting.jpg"}) {
                 childImageSharp {
                     fluid(webpQuality: 80, jpegQuality: 80, fit: COVER, maxWidth: 800) {
+                        aspectRatio
                         base64
+                        originalImg
+                        originalName
+                        presentationHeight
+                        presentationWidth
                         sizes
+                        src
                         srcSet
                         srcSetWebp
                         srcWebp
-                        src
+                        tracedSVG
                     }
                 }
                 name

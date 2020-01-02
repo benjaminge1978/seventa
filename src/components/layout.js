@@ -1,5 +1,5 @@
 import React from "react";
-import Helmet from "react-helmet";
+// import Helmet from "react-helmet";
 import PropTypes from "prop-types";
 import Header from "./header/header";
 import Footer from "./footer/footer";
@@ -14,9 +14,9 @@ class Layout extends React.Component {
 
         return (
             <React.Fragment>
-                <Helmet>
-                    <link rel="stylesheet" href="//use.typekit.net/xad6ytx.css" />
-                </Helmet>
+                {/*<Helmet>*/}
+                {/*    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet" />*/}
+                {/*</Helmet>*/}
                 <div className={LayoutClassName}>
                     <Header />
                     <main>{children}</main>

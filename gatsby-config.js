@@ -29,14 +29,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-react-svg`,
-      options: {
-        rule: {
-          include: `${__dirname}/src/images` // See below to configure properly
-        }
-      }
-    },
+    `gatsby-plugin-react-svg`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -46,5 +39,13 @@ module.exports = {
     },
     `@contentful/gatsby-transformer-contentful-richtext`,
     `gatsby-plugin-remove-trailing-slashes`,
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Lexend Deca']
+        }
+      }
+    },
   ],
 };

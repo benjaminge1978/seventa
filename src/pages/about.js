@@ -86,12 +86,14 @@ export const query = graphql`
                 photo {
                     title
                     fluid(maxWidth: 400, quality: 75) {
+                        aspectRatio
                         base64
                         src
                         srcSet
                         srcSetWebp
                         srcWebp
                         sizes
+                        tracedSVG
                     }
                 }
                 position

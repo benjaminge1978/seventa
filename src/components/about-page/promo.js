@@ -8,12 +8,18 @@ export default () => {
             file(relativePath: {eq: "seventa-about-us-header-image.jpg"}) {
                 childImageSharp {
                     fluid(quality: 85) {
+                        aspectRatio
                         base64
+                        originalImg
+                        originalName
+                        presentationHeight
+                        presentationWidth
+                        sizes
                         src
                         srcSet
                         srcSetWebp
                         srcWebp
-                        aspectRatio
+                        tracedSVG
                     }
                 }
             }
