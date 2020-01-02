@@ -2,9 +2,8 @@
   margin-bottom: 90px;
 
   .section-heading {
-    padding: 0 100px;
-    //padding-top: 220px;
-    //padding-bottom: 220px;
+    padding-top: 220px;
+    padding-bottom: 220px;
 
     &__title {
       margin-bottom: 65px;
@@ -75,11 +74,18 @@
       padding-top: 50%;
     }
 
-    svg {
-      width: 60px;
-      display: block;
-      margin: 0 auto;
+    .container-labelled__label {
       padding-top: 100px;
+
+      a {
+        width: 60px;
+        display: block;
+        margin: 0 auto;
+
+        svg {
+          display: block;
+        }
+      }
     }
 
     img {
@@ -159,8 +165,7 @@
     }
 
     .section-heading {
-      padding-right: 150px;
-      padding-left: 150px;
+      padding: 0 150px;
     }
   }
 }

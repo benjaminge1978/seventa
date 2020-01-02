@@ -12,7 +12,7 @@ export default () => {
                 nodes {
                     logo {
                         title
-                        fluid(quality: 80) {
+                        fluid(quality: 100) {
                             base64
                             sizes
                             src

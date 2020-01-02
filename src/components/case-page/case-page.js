@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 import Layout from "../layout";
 import SEO from "../seo";
@@ -39,7 +39,7 @@ const CasePage = ({data}) => {
                 </PageHeading>
                 {
                     'undefined' !== typeof thumbnail.fluid
-                    ?   <ContainerLabelled label={<Arrow />} className="case-page-thumbnail">
+                        ?   <ContainerLabelled label={<Link to={category.slug}><Arrow /></Link>} className="case-page-thumbnail">
                             <Img fluid={thumbnail.fluid} alt={thumbnail.title} loading="lazy" />
                         </ContainerLabelled>
                     : null
@@ -127,7 +127,7 @@ const CasePage = ({data}) => {
                     ?   <ContainerLabelled className="section--see-more">
                             <SeeMore
                                 cases={seeMoreNodes}
-                                catName={category.name}
+                                category={category}
                             />
                         </ContainerLabelled>
                     : null

@@ -4,16 +4,15 @@ import { useStaticQuery, graphql } from "gatsby";
 import SplitText from "gsap/SplitText";
 import Img from "gatsby-image";
 import Arrow from "../../../images/arrow-down.svg"
-// import AnimatedLogo from "../animated-logo/animated-logo";
 
 import "./banner.scss"
 
 export default () => {
     const bannerImage = useStaticQuery(graphql`
         query BannerImage {
-            file(relativePath: {eq: "seventa-header-image.jpg"}) {
+            file(relativePath: {eq: "seventa-header.jpg"}) {
                 childImageSharp {
-                    fluid(quality: 80) {
+                    fluid(quality: 100) {
                         aspectRatio
                         base64
                         originalImg
@@ -51,7 +50,6 @@ export default () => {
                   alt={bannerImage.file.childImageSharp.name}
                 />
           }
-          {/*<AnimatedLogo/>*/}
         </div>
       </div>
     );

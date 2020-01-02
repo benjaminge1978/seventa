@@ -12,6 +12,7 @@ import Arrow from "../../images/arrow-down.svg";
 import "./case-category.scss";
 
 export default ({data}) => {
+    console.log(data);
     const category = data.contentfulCaseCategory;
     const testimonial = category.testimonials ? category.testimonials[0] : null;
 
@@ -98,5 +99,4 @@ export const query = graphql`
             }
         }
     }
-
 `;
