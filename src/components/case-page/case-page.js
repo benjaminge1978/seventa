@@ -53,7 +53,7 @@ const CasePage = ({data}) => {
                                 sectionTitle={section1Title}
                             >
                                 <LongDashText>
-                                    <div dangerouslySetInnerHTML={{__html: section2Content.childContentfulRichText.html}} />
+                                    <div dangerouslySetInnerHTML={{__html: section1Content.childContentfulRichText.html}} />
                                 </LongDashText>
                             </SectionHeading>
                         </div>
