@@ -14,9 +14,6 @@ class Layout extends React.Component {
 
         return (
             <React.Fragment>
-                {/*<Helmet>*/}
-                {/*    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet" />*/}
-                {/*</Helmet>*/}
                 <div className={LayoutClassName}>
                     <Header />
                     <main>{children}</main>

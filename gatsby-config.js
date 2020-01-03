@@ -43,7 +43,8 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Lexend Deca']
+          families: ['Lexend Deca'],
+          display: 'swap'
         }
       }
     },
