@@ -24,7 +24,7 @@ export default () => (
                     {href: 'policy', text: 'Privacy Policy & T&C\'s'},
                     {href: 'csr', text: 'CSR'},
                     {href: 'cookie-policy', text: 'Cookie Policy'},
-                    {href: 'https://google.com', text: 'Site by MilkIsNice', external: true},
+                    {href: 'https://milkisnice.com', text: 'Site by MilkIsNice', external: true},
                 ]}/>
             </div>
             <div className="social-links">

@@ -1,5 +1,5 @@
 .promo-section {
-    padding: 250px 0;
+    padding: 200px 0;
     display: flex;
     justify-content: flex-end;
     background-color: #EFEFEF;
@@ -42,7 +42,7 @@
 @media all and (max-width: 768px) {
     .promo-section {
         padding-top: 100px;
-        padding-bottom: 100px;
+        padding-bottom: 50px;
 
         &__inner {
             margin-right: 65px;
@@ -50,6 +50,7 @@
 
             h3 {
                 font-size: 34px;
+                line-height: 1.4;
             }
 
             p {

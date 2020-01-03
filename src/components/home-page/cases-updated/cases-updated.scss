@@ -30,6 +30,7 @@
         grid-column-end: 12;
         grid-row-start: 3;
         grid-row-end: 5;
+        margin-bottom: 95px;
       }
 
       &--3 {
@@ -37,13 +38,15 @@
         grid-column-end: 5;
         grid-row-start: 4;
         grid-row-end: 7;
+        margin-bottom: 95px;
       }
 
       &--4 {
         grid-column-start: 7;
-        grid-column-end: 12;
-        grid-row-start: 6;
+        grid-column-end: 13;
+        grid-row-start: 5;
         grid-row-end: 10;
+        margin-bottom: 95px;
       }
 
       &--5 {
@@ -51,6 +54,7 @@
         grid-column-end: 6;
         grid-row-start: 8;
         grid-row-end: 11;
+        margin-bottom: 95px;
       }
 
       &__thumb {
@@ -124,6 +128,17 @@
   }
 }
 
+@media all and (max-width: 1920px) {
+  .cases-updated-section .cases-updated-list .cases-item__heading .case-heading-text h3 {
+    font-weight: 400;
+    font-size: 30px;
+}
+.cases-updated-section .cases-updated-list .cases-item__heading svg {
+  display: block;
+  width: 30px;
+}
+}
+
 @media all and (max-width: 992px) {
   .cases-updated-section {
 
@@ -137,4 +152,15 @@
       }
     }
   }
+  .cases-updated-section .cases-updated-list .cases-item__heading .case-heading-text h3 {
+    font-weight: 400;
+    font-size: 20px;
+}
+.cases-updated-section .cases-updated-list .cases-item__heading svg {
+  display: block;
+  width: 27px;
+}
+.cases-updated-section {
+  margin-bottom:0px;
+}
 }

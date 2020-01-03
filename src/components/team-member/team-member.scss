@@ -1,9 +1,14 @@
+.team-members-section {
+  margin-bottom: 90px;
+}
+
 .team-member {
 
   &__name {
     font-size: 1.5rem;
     margin-bottom: .5rem;
     font-weight: 400;
+    margin-top: 2rem;
   }
 
   &__photo {
@@ -11,10 +16,6 @@
     width: 100%;
     height: auto;
     margin-bottom: 2rem;
-
-    .gatsby-image-wrapper {
-      padding-top: 100%;
-    }
   }
 
   &__position {

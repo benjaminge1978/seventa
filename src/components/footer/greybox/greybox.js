@@ -14,7 +14,7 @@ export default () => {
                     <a href="mailto:info@seventa.co.uk">info@seventa.co.uk</a>
                 </p>
                 <p className="contact-info">
-                    <a href="tel:00441202237433">1202 237 433</a>
+                    <a href="tel:00441202237433">01202 237 433</a>
                 </p>
             </div>
             <div className="brand-mobile">
