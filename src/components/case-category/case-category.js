@@ -45,7 +45,7 @@ export default ({data}) => {
             }
             {
                 testimonial
-                    ? <ContainerLabelled className="testimonial-section" label={<span className="testimonial-label">Testimonial ——</span>}>
+                    ? <ContainerLabelled className="testimonial-section" label={<span className="testimonial-label">Testimonial </span>}>
                         <Testimonial
                             author={testimonial.author}
                             text={testimonial.childContentfulTestimonialsTextRichTextNode.childContentfulRichText.html}

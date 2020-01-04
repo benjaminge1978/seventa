@@ -47,6 +47,16 @@
   }
 }
 
+.testimonial-label:after {
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 0.025rem;
+  position: relative;
+  vertical-align: middle;
+  width: 30%;
+}
+
 @media all and (max-width: 992px) {
   .testimonial-section {
 

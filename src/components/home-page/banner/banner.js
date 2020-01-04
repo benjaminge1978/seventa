@@ -38,10 +38,10 @@ export default () => {
           <Arrow/>
         </div>
         <div className="banner-section__inner">
-          <h2 className="banner-text">
+          <h1 className="banner-text">
             <span>We love experiences.</span>
             <span>We create them.</span>
-          </h2>
+          </h1>
           {
             bannerImage.errors
               ? null

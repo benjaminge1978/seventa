@@ -8,7 +8,7 @@ export default () => {
     return (
         <>
             <h3>Let's have a chat</h3>
-            <p className="lets-chat-desc">Do you have a project or collaboration you would to talk about? Are you curious blah blahimplement extensive materials. Proactively brand prospective internal or "organic" sources. Continually parallel task functional ideas and quickly reinvent superior metrics.</p>
+            <p className="lets-chat-desc">We’re always happy to talk through any new projects and ideas.</p>
             <div className="greybox-contact">
                 <p className="contact-info">
                     <a href="mailto:info@seventa.co.uk">info@seventa.co.uk</a>

@@ -11,7 +11,7 @@ import SiteBrand from "../site-brand/site-brand";
 export default () => (
     <footer className="site-footer">
         <ContainerLabelled className="footer-greybox" label={<>
-            <span className="greybox-lets-talk">Let's talk ——</span>
+            <span className="greybox-lets-talk">Let's talk </span>
             <span className="greybox-site-brand">
                 <SiteBrand />
             </span></>
@@ -28,7 +28,7 @@ export default () => (
                 ]}/>
             </div>
             <div className="social-links">
-                <span className="social-links__text">Follow us ——</span>
+                <span className="social-links__text">Follow us </span>
                 <SocialMenu />
             </div>
         </div>

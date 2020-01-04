@@ -16,12 +16,7 @@ export default () => (
                 <span className="experience__years">7 years of<br /> experience</span>
                 <span className="experience__dash">————</span>
                 <span className="experience__text">
-                        <span>At Seventa we take pride in knowing our customers.</span>
-                        <span>Competenly leverage existing real-time information.</span>
-                        <span>Dramatically orchestrate web-enabled nosql.</span>
-                        <span>Monotonectally utilize bricks-andclicks architectures.</span>
-                        <span>Estrate web-enabled nosql. Monotocectallu utilize</span>
-                        <span>bricks-and-clicks archtectures.</span>
+                        <p>It’s no secret that the ‘Events’ industry is a huge field by any measure. Our portfolio of work includes, event design, management and production for global brands, private clients and corporate companies. </p>
                     </span>
             </p>
         </div>
@@ -31,7 +26,7 @@ export default () => (
                     <BrandActivationImage />
                 </Link>
                 <h3><Link to="/brand-activation">Brand activation</Link></h3>
-                <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
+                <p>On trend, flexible, and the perfect opportunity for some experiential marketing, we work closely with brands to produce unique experiences for consumers.</p>
                 <Link to="/brand-activation"><Arrow /></Link>
             </div>
             <div className="services-cards__item">
@@ -39,7 +34,7 @@ export default () => (
                     <ConferencesImage />
                 </Link>
                 <h3><Link to="/conferences">Conferences</Link></h3>
-                <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
+                <p>Whilst purpose comes at the forefront of every event, we’re well known for bringing our creativity to the table, to produce exciting, memorable and engaging events.</p>
                 <Link to="/conferences"><Arrow /></Link>
             </div>
             <div className="services-cards__item">
@@ -47,7 +42,8 @@ export default () => (
                     <EventProductionImage />
                 </Link>
                 <h3><Link to="/event-production">Event production</Link></h3>
-                <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
+                <p>Our in-house creative event production team work closely with clients, to design, build and execute ideas into reality. We simplify the process, we listen, we create and we deliver.
+</p>
                 <Link to="/event-production"><Arrow /></Link>
             </div>
             <div className="services-cards__item">
@@ -55,7 +51,7 @@ export default () => (
                     <EventManagementImage />
                 </Link>
                 <h3><Link to="/event-management">Event management</Link></h3>
-                <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
+                <p>Known for our impeccable attention to detail, we thrive on the creation and management of large scale events.</p>
                 <Link to="/event-management"><Arrow /></Link>
             </div>
             <div className="services-cards__item">
@@ -63,7 +59,8 @@ export default () => (
                     <VenueSourcingImage />
                 </Link>
                 <h3><Link to="/venue-sourcing">Venue sourcing</Link></h3>
-                <p>At Seventa we take pride in knowing our customers. Competently leverage existing real-time information.</p>
+                <p>With established contacts at a wide range of both well-known and more unique venues across the UK we have a wealth of experience finding venues to suit any event requirement.
+</p>
                 <Link to="/venue-sourcing"><Arrow /></Link>
             </div>
         </div>

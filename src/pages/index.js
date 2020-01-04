@@ -13,15 +13,15 @@ import Services from '../components/home-page/services/services';
 const IndexPage = ({ data }) => {
     return (
         <Layout>
-            <SEO title="Home" />
+            <SEO title="Seventa Events | Brand activation. Conferences. Event production. Event management. Venue sourcing" />
             <AnimatedLogo />
             <Banner />
             <Promo />
-            <ContainerLabelled className="cases-updated-section" label={<span className="section-label">Cases ——</span>}>
+            <ContainerLabelled className="cases-updated-section" label={<span className="section-label">Cases </span>}>
                 <CasesUpdated data={data}/>
             </ContainerLabelled>
             <Services />
-            <ContainerLabelled className="customers-section" label={<span className="section-label">Customers ——</span>}>
+            <ContainerLabelled className="customers-section" label={<span className="section-label">Customers </span>}>
                 <Customers />
             </ContainerLabelled>
         </Layout>

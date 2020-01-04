@@ -7,8 +7,8 @@ export default () => (
         <div className="promo-section__inner">
             <h3>Creating unforgettable experiences and events.</h3>
             <p>
-                <span>Competently leverage existing real-time information. Dramatically orchestrate</span>
-                <span>web-enabled nosql. Monotonectally utilize bricks-and-clicks architectures.</span>
+            We are your best-kept secret. A highly passionate and creative team, that works behind the scenes to
+design, plan, create and manage your event.
             </p>
         </div>
     </div>

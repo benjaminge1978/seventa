@@ -5,6 +5,16 @@
     .section-label {
         display: block;
         transform: rotate(90deg) translate(44%, -10%);
+        &::after {
+            background-color: #000;
+            content: "";
+            display: inline-block;
+            height: 1px;
+            position: relative;
+            left: 5px;
+            vertical-align: middle;
+            width: 50px;
+        }
     }
 
     .container-labelled__inner {

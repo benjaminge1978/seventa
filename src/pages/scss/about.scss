@@ -70,6 +70,7 @@
         h2 {
           font-size: 2.5rem;
           margin-bottom: 3rem;
+          max-width: 850px;
         }
       }
     }
@@ -86,8 +87,8 @@
 
           .long-dash-text__content {
             width: 100%;
-            max-width: 1200px;
-
+            max-width: 1000px;
+            margin-top: 20px;
             p {
               font-size: 1.6rem;
               line-height: 2.6rem;
@@ -246,5 +247,18 @@
       padding-right: 25px;
       padding-left: 25px;
     }
+  }
+}
+
+.long-dash-text__dash {
+  letter-spacing: -0.14rem;
+  position: relative;
+}
+
+.first-dash {
+  .long-dash-text__dash {
+    letter-spacing: -0.14rem;
+    position: relative;
+    top:30px;
   }
 }

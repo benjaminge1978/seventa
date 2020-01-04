@@ -16,7 +16,17 @@
             top: 0;
             left: 25%;
             transform: rotate(90deg) translateX(36%);
-            white-space: nowrap
+            white-space: nowrap;
+            &::after {
+                background-color: #000;
+                content: "";
+                display: inline-block;
+                height: 1px;
+                position: relative;
+                left: 5px;
+                vertical-align: middle;
+                width: 50px;
+            }
         }
 
         .site-brand {
@@ -84,6 +94,7 @@
     }
 }
 
+
 @media only screen and (max-width: 992px) {
     .footer-greybox {
 
@@ -108,3 +119,4 @@
         }
     }
 }
+

@@ -21,17 +21,18 @@ export default ({ data }) => {
         <Layout className="about-page-layout">
             <SEO title="About us"/>
             <PageHeading
-                pageName="About us"
-                pageTitle="We are the awesome team that does something"
-                description="At Seventa we take pride in knowing our customers. Completely leverage existing real-time information. Dramatically orchestrate web-enabled mosql. Monotonectally utilize"
+                pageName="Welcome to Seventa Events!"
+                pageTitle="A mighty team, specialising in all things events."
+                description="Founded in 2011 by Simon Brooks, Seventa was built from a drive of enthusiasm for the industry of likeminded people, out of a garden shed. Seventa now have hubs in London and Bournemouth respectively. 
+                "
             />
             <ContainerLabelled label={<Arrow />} className="about-page-promo" innerClassName="about-page-promo__inner" labelClassName="about-page-promo__label">
                 <PromoImage />
             </ContainerLabelled>
             <ContainerLabelled className="about-page-text about-page-text--blue">
                 <h3>About us</h3>
-                <LongDashText>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis eligendi enim et, libero magni quas rem ullam. Aspernatur debitis explicabo inventore laudantium maiores natus quis quos rerum tempore voluptatibus. Blanditiis.</p>
+                <LongDashText className="first-dash">
+                    <p>Fast forward to today and here we are, known for our personality, experience and creativity, designing events and experiences that we know will leave a lasting impression.</p>
                 </LongDashText>
             </ContainerLabelled>
             <div className="about-page-images">
@@ -43,10 +44,12 @@ export default ({ data }) => {
                 </div>
             </div>
             <ContainerLabelled className="about-page-text about-page-text--grey" innerClassName="light-bg">
-                <p className="light-text">It all stared here</p>
-                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+                <p className="light-text">From Humble begginings</p>
+                <h2>You’ll be pleased to hear that we’ve moved on from the shed…</h2>
                 <LongDashText>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis eligendi enim et, libero magni quas rem ullam. Aspernatur debitis explicabo inventore laudantium maiores natus quis quos rerum tempore voluptatibus. Blanditiis.</p>
+                    <p>Our offices are now conjoined to a 26,000 ft square warehouse stocked floor to ceiling with event hire equipment provided by our sister company Innovative Hire. 
+
+As a team we love what we do and are passionate about our work. Creativity and organisation sit hand in hand with us. We are extremely proud of our client base, having retained clients from day one, whilst welcoming exciting and upcoming global brands.</p>
                 </LongDashText>
             </ContainerLabelled>
             {
