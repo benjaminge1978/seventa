@@ -40,14 +40,8 @@ export const query = graphql`
                     name
                     cases {
                         thumbnail {
-                            fluid(quality: 80) {
-                                base64
-                                src
-                                srcSet
-                                srcSetWebp
-                                srcWebp
-                                sizes
-                                aspectRatio
+                            fluid(maxWidth: 1800, quality: 80) {
+                              ...GatsbyContentfulFluid_withWebp_noBase64
                             }
                         }
                         id
@@ -68,15 +62,8 @@ export const query = graphql`
                         slug
                     }
                     image {
-                        fluid {
-                            tracedSVG
-                            srcWebp
-                            srcSetWebp
-                            srcSet
-                            src
-                            sizes
-                            base64
-                            aspectRatio
+                        fluid(maxWidth: 1800, quality: 80) {
+                          ...GatsbyContentfulFluid_withWebp_noBase64
                         }
                     }
                 }

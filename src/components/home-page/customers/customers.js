@@ -12,15 +12,8 @@ export default () => {
                 nodes {
                     logo {
                         title
-                        fluid(quality: 100) {
-                            base64
-                            sizes
-                            src
-                            srcSet
-                            srcSetWebp
-                            srcWebp
-                            aspectRatio
-                            tracedSVG
+                        fluid(maxWidth: 400, quality: 80) {
+                          ...GatsbyContentfulFluid_withWebp_noBase64
                         }
                     }
                 }

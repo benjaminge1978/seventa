@@ -33,7 +33,7 @@ export default class extends React.Component {
                 this._animatedLogoItems,
                 1.3,
                 {
-                    delay: 0.5,
+                    delay: 0.1,
                     y: "20px",
                     autoAlpha: 0,
                     ease:Power3.easeOut

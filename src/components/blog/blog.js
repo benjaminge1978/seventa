@@ -63,14 +63,7 @@ export const query = graphql`
                 thumbnail {
                     title
                     fluid(maxWidth: 600, quality: 50) {
-                        base64
-                        sizes
-                        src
-                        srcSet
-                        srcSetWebp
-                        srcWebp
-                        aspectRatio
-                        tracedSVG
+                      ...GatsbyContentfulFluid_withWebp_noBase64
                     }
                 }
                 excerpt
